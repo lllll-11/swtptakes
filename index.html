@@ -125,8 +125,8 @@
     }
   
     async function guardarEnGoogleSheets(nombre, numero) {
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbznTAd02Pxqrxc21hZ3WLNhpGd8wjuikVoMmzchTkftED3SonBHuxZMubp9M6fpy0EW/exec';
-        try {
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbznTAd02Pxqrxc21hZ3WLNhpGd8wjuikVoMmzchTkftED3SonBHuxZMubp9M6fpy0EW/exec';
+      try {
         await fetch(scriptURL, {
           method: 'POST',
           body: new URLSearchParams({ nombre, numero })
@@ -137,10 +137,16 @@
     }
   
     async function generarTicket() {
+      const boton = document.querySelector(".ticket-box button");
+      boton.disabled = true;
+      boton.textContent = "Generando...";
+  
       const { jsPDF } = window.jspdf;
       const nombre = document.getElementById("nombre").value.trim();
       if (!nombre) {
         alert("Por favor, escribe tu nombre.");
+        boton.disabled = false;
+        boton.textContent = "Generar Ticket";
         return;
       }
   
@@ -158,6 +164,12 @@
       doc.save(`ticket_${numero}.pdf`);
   
       document.getElementById("resultado").innerHTML = `<strong>Tu número asignado es:</strong> ${numero}`;
+  
+      // Esperar 5 segundos para volver a habilitar el botón
+      setTimeout(() => {
+        boton.disabled = false;
+        boton.textContent = "Generar Ticket";
+      }, 5000);
     }
   </script>
   
