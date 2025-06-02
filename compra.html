@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorteo iPhone 13 mini | swtptakes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background: url('WhatsApp Image 2025-05-31 at 8.27.54 PM.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 0;
+      pointer-events: none;
+    }
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+    header {
+      padding: 25px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    img {
+      width: 260px;
+      margin: 25px auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      display: block;
+    }
+    .container {
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(34,34,34,0.85);
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    }
+    input {
+      padding: 12px;
+      width: 80%;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 1px solid #43ea5a;
+      font-size: 16px;
+      background: #222;
+      color: #fff;
+    }
+    input::placeholder {
+      color: #b5f5c6;
+      opacity: 1;
+    }
+    button, .container a > button {
+      background: linear-gradient(90deg, #43ea5a 0%, #1e9c36 100%);
+      color: #fff;
+      padding: 12px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.4s;
+      font-weight: 600;
+      box-shadow: 0 4px 20px 0 rgba(34, 197, 94, 0.3), 0 1.5px 0 #166534 inset;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 10px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    button:hover, .container a > button:hover {
+      transform: scale(1.07) rotate(-1deg);
+      background: linear-gradient(90deg, #1e9c36 0%, #43ea5a 100%);
+      box-shadow: 0 8px 32px 0 rgba(34, 197, 94, 0.5), 0 2px 0 #166534 inset;
+    }
+    .ticket-box {
+      margin-top: 25px;
+      font-size: 17px;
+      color: #fff;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 15px;
+      color: #b5f5c6;
+      background: transparent;
+    }
+    a {
+      color: #43ea5a;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    strong {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header> Sorteo iPhone 13 mini - swtptakes</header>
+
+  <div class="container">
+    <h2>Participa por un iPhone 13 mini (128GB) por solo $50 MXN</h2>
+    <img src="iphone.jpeg" alt="iPhone 13 mini" />
+    <p><strong>500 boletos disponibles</strong> — Sorteo el <strong>30 de junio de 2025</strong></p>
+              
+<p><strong>abre en navegador externo </strong> <strong>para generar tu ticket</strong></p>
+    <p><strong>boleto no pagado</strong><strong>, numero no valido</strong></p>
+        <p><strong>el ganador sera anunciado en </strong><strong>nuestro perfil de instagram</strong></p>
+     <footer>
+    instagram: <a href="https://instagram.com/swtptakes" target="_blank">swtptakes</a>
+  </footer>
+<strong>siguenos para mantenerte al tanto</strong></p>
+    <a href="https://mpago.li/1hiLdA9" target="_blank">
+      <button>Comprar Boleto</button>
+    </a>
+
+    <div class="ticket-box">
+      <p>Después de pagar, escribe tu nombre de usuario de instagram para generar tu ticket único:</p>
+      <input type="text" id="nombre" placeholder="Tu nombre de usuario..." />
+      <br/>
+      <button onclick="generarTicket()">Generar Ticket</button>
+    </div>
+    <strong>el ticket se descarga en PDF automatico</strong></p>
+
+    <div id="resultado" style="margin-top:20px;"></div>
+    <button onclick="window.location.href='index.html'" style="margin-top:20px;">Regresar</button>
+  </div>
+
+  <footer>
+    Organizado por <strong>swtptakes</strong> | Contacto: <a href="https://instagram.com/swtptakes" target="_blank">@swtptakes</a>
+  </footer>
+
+  <script>
+    const usados = new Set();
+  
+    function generarNumero() {
+      let num;
+      do {
+        num = Math.floor(1000 + Math.random() * 9000);
+      } while (usados.has(num));
+      usados.add(num);
+      return num;
+    }
+  
+    async function guardarEnGoogleSheets(nombre, numero) {
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbznTAd02Pxqrxc21hZ3WLNhpGd8wjuikVoMmzchTkftED3SonBHuxZMubp9M6fpy0EW/exec';
+      try {
+        await fetch(scriptURL, {
+          method: 'POST',
+          body: new URLSearchParams({ nombre, numero })
+        });
+      } catch (error) {
+        console.warn("Error al guardar en Google Sheets:", error);
+      }
+    }
+  
+    async function generarTicket() {
+      const boton = document.querySelector(".ticket-box button");
+      boton.disabled = true;
+      boton.textContent = "Generando...";
+  
+      const { jsPDF } = window.jspdf;
+      const nombre = document.getElementById("nombre").value.trim();
+      if (!nombre) {
+        alert("Por favor, escribe tu nombre.");
+        boton.disabled = false;
+        boton.textContent = "Generar Ticket";
+        return;
+      }
+  
+      const numero = generarNumero();
+      await guardarEnGoogleSheets(nombre, numero);
+  
+      const doc = new jsPDF();
+      doc.setFontSize(18);
+      doc.text("Ticket de Sorteo - swtptakes", 20, 30);
+      doc.setFontSize(14);
+      doc.text(`Nombre: ${nombre}`, 20, 50);
+      doc.text(`Número asignado: ${numero}`, 20, 65);
+      doc.text("Sorteo finaliza: 30 de junio de 2025", 20, 80);
+      doc.text("Gracias por participar. ¡Buena suerte!", 20, 100);
+      doc.save(`ticket_${numero}.pdf`);
+  
+      document.getElementById("resultado").innerHTML = `<strong>Tu número asignado es:</strong> ${numero}`;
+  
+      // Esperar 5 segundos para volver a habilitar el botón
+      setTimeout(() => {
+        boton.disabled = false;
+        boton.textContent = "Generar Ticket";
+      }, 5000);
+    }
+  </script>
+</body>
+</html>

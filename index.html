@@ -2,176 +2,327 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sorteo iPhone 13 mini | swtptakes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://apis.google.com/js/api.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenido a SWPStakes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
+  body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background: url('WhatsApp Image 2025-05-31 at 8.27.54 PM.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  /* Elimina backdrop-filter aquí */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7); /* Ajusta la opacidad si quieres más o menos oscuro */
+  z-index: 0;
+  pointer-events: none;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f5f7fa;
-      color: #2e2e2e;
+    }
+
+    .redes a {
+      color: white;
+      margin-left: 1rem;
+      font-size: 1.6rem;
+      transition: color 0.3s;
+    }
+
+    .redes a:hover {
+      color: #ffffff;
+    }
+
+    .ruleta-container {
+      text-align: center;
+      margin-top: 3rem;
+    }
+.ruleta {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 10px solid #FFD700; /* Borde dorado tipo casino */
+  background: transparent;
+  box-shadow: 0 0 40px 0 #FFD70088, 0 0 0 8px #222 inset;
+  position: relative;
+  margin: 0 auto;
+}
+
+    .ruleta::after {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 20px solid #fcd34d;
+    }
+
+    .girar-btn {
+  margin-top: 1.5rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(90deg, #FFD700 0%, #FF8C00 100%);
+  color: #222;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px 0 rgba(255, 215, 0, 0.3), 0 1.5px 0 #b8860b inset;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.girar-btn::before {
+  content: "";
+  position: absolute;
+  left: -75%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  transition: left 0.5s;
+  z-index: 1;
+}
+
+.girar-btn:hover {
+  transform: scale(1.07) rotate(-1deg);
+  box-shadow: 0 8px 32px 0 rgba(255, 215, 0, 0.5), 0 2px 0 #b8860b inset;
+  background: linear-gradient(90deg, #FF8C00 0%, #FFD700 100%);
+}
+
+.girar-btn:hover::before {
+  left: 120%;
+}
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .producto {
       text-align: center;
     }
-    header {
-      padding: 25px;
-      background: #1e3a8a;
-      color: white;
-      font-size: 26px;
-      font-weight: 700;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    .producto img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
     }
-    img {
-      width: 260px;
-      margin: 25px auto;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+
+    .producto p {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #ffffff;
     }
-    .container {
-      max-width: 640px;
-      margin: auto;
-      padding: 30px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    }
-    input {
-      padding: 12px;
-      width: 80%;
-      margin: 12px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-    button {
-      background: #2563eb;
-      color: white;
-      padding: 12px 28px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      font-weight: 600;
-    }
-    button:hover {
-      background: #1d4ed8;
-    }
-    .ticket-box {
-      margin-top: 25px;
-      font-size: 17px;
-    }
-    footer {
-      margin-top: 50px;
-      font-size: 15px;
-      color: #555;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+
+    .boton-comprar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: 2rem auto 1rem;
+  background: linear-gradient(90deg, #43ea5a 0%, #1e9c36 100%);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px 0 rgba(34, 197, 94, 0.3), 0 1.5px 0 #166534 inset;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.boton-comprar .trebol {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+.boton-comprar.animar-trebol .trebol {
+  transform: scale(1.4) rotate(-20deg);
+  filter: drop-shadow(0 0 8px #43ea5a);
+}
+    canvas#ruleta {
+  filter: drop-shadow(0 0 12px #FFD70088);
+}
+.ruleta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%;
+}
   </style>
 </head>
 <body>
-  <header> Sorteo iPhone 13 mini - swtptakes</header>
-
-  <div class="container">
-    <h2>Participa por un iPhone 13 mini (128GB) por solo $50 MXN</h2>
-    <img src="iphone.jpeg" alt="iPhone 13 mini" />
-    <p><strong>500 boletos disponibles</strong> — Sorteo el <strong>30 de junio de 2025</strong></p>
-              
-<p><strong>abre en navegador externo </strong> <strong>para generar tu ticket</strong></p>
-    <p><strong>boleto no pagado</strong><strong>, numero no valido</strong></p>
-        <p><strong>el ganador sera anunciado en </strong><strong>nuestro perfil de instagram</strong></p>
-     <footer>
-    instagram: <a href="https://instagram.com/swtptakes" target="_blank">swtptakes</a>
-  </footer>
-<strong>siguenos para mantenerte al tanto</strong></p>
-    <a href="https://mpago.li/1hiLdA9" target="_blank">
-      <button>Comprar Boleto</button>
-    </a>
-
-    <div class="ticket-box">
-      <p>Después de pagar, escribe tu nombre de usuario de instagram para generar tu ticket único:</p>
-      <input type="text" id="nombre" placeholder="Tu nombre de usuario..." />
-      <br/>
-      <button onclick="generarTicket()">Generar Ticket</button>
+  <header>
+    <h1>swtptakes</h1>
+    <div class="redes">
+      <a href="https://instagram.com/swtptakes" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
     </div>
-    <strong>el ticket se descarga en PDF automatico</strong></p>
+  </header>
 
-    <div id="resultado" style="margin-top:20px;"></div>
+<div class="ruleta-container">
+  <canvas id="ruleta" width="300" height="300" style="border-radius:50%;border:8px solid #fff;background:transparent;"></canvas>
+  <button class="girar-btn" onclick="girarRuleta()">Girar</button>
+</div>
+  <div class="productos">
+    <div class="producto">
+      <img src="iphone.jpeg" alt="Producto 1">
+      <p>iPhone 13 Mini</p>
+    </div>
   </div>
 
-  <footer>
-    Organizado por <strong>swtptakes</strong> | Contacto: <a href="https://instagram.com/swtptakes" target="_blank">@swtptakes</a>
-  </footer>
+<button class="boton-comprar" id="botonTrebol">
+  <span>Comprar Boletos</span>
+  <span class="trebol">
+    <svg viewBox="0 0 32 32" fill="#43ea5a" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="8" r="7"/>
+      <circle cx="8" cy="18" r="7"/>
+      <circle cx="24" cy="18" r="7"/>
+      <rect x="14" y="18" width="4" height="10" rx="2" fill="#1e9c36"/>
+    </svg>
+  </span>
+</button>
 
-  <script>
-    const usados = new Set();
-  
-    function generarNumero() {
-      let num;
-      do {
-        num = Math.floor(1000 + Math.random() * 9000);
-      } while (usados.has(num));
-      usados.add(num);
-      return num;
+  <div class="info-extra">
+  </div>
+
+<script>
+const premios = [
+  "iPhone 13 Mini",
+  "AirPods",
+  "Apple Watch",
+  "Camiseta",
+  "de nuevo",
+  "suerte!",
+];
+const num = premios.length;
+const verdeIndex = num - 1; // La última casilla será verde y la ganadora
+
+const colores = Array(num).fill().map((_, i) =>
+  i === verdeIndex ? "#388E3C" : (i % 2 === 0 ? "#D32F2F" : "#222")
+);
+
+const canvas = document.getElementById("ruleta");
+const ctx = canvas.getContext("2d");
+const size = canvas.width;
+const radio = size / 2;
+
+function dibujarRuleta(rotacion = 0) {
+  ctx.clearRect(0, 0, size, size);
+  for (let i = 0; i < num; i++) {
+    const angInicio = ((2 * Math.PI) / num) * i + rotacion;
+    const angFin = angInicio + (2 * Math.PI) / num;
+    // Dibuja sector
+    ctx.beginPath();
+    ctx.moveTo(radio, radio);
+    ctx.arc(radio, radio, radio - 8, angInicio, angFin);
+    ctx.closePath();
+    ctx.fillStyle = colores[i];
+    ctx.fill();
+    // Dibuja texto
+    ctx.save();
+    ctx.translate(radio, radio);
+    ctx.rotate(angInicio + (angFin - angInicio) / 2);
+    ctx.textAlign = "right";
+    ctx.fillStyle = "#fff";
+    ctx.font = "bold 16px Segoe UI";
+    ctx.shadowColor = "#000";
+    ctx.shadowBlur = 4;
+    ctx.fillText(premios[i], radio - 30, 8);
+    ctx.restore();
+  }
+  // Dibuja flecha
+  ctx.beginPath();
+  ctx.moveTo(radio, 10);
+  ctx.lineTo(radio - 12, 30);
+  ctx.lineTo(radio + 12, 30);
+  ctx.closePath();
+  ctx.fillStyle = "#fcd34d";
+  ctx.shadowColor = "#222";
+  ctx.shadowBlur = 8;
+  ctx.fill();
+  ctx.shadowBlur = 0;
+}
+dibujarRuleta();
+
+function girarRuleta() {
+  // Siempre cae en la casilla verde (la última)
+  const casillaGanadora = verdeIndex;
+  const gradosPorSector = 360 / num;
+  // El ángulo objetivo es el centro de la casilla ganadora, ajustado -90° para que la flecha apunte arriba
+  const gradosFinal = 360 * 5 + (270 - casillaGanadora * gradosPorSector - gradosPorSector / 2);
+  let rot = 0;
+  let start = null;
+  function animarRuleta(ts) {
+    if (!start) start = ts;
+    const progreso = Math.min((ts - start) / 6000, 1);
+    const ease = 1 - Math.pow(1 - progreso, 3);
+    rot = (gradosFinal * ease) * Math.PI / 180;
+    dibujarRuleta(rot);
+    if (progreso < 1) {
+      requestAnimationFrame(animarRuleta);
+    } else {
+      // Al terminar, ajusta la ruleta exactamente al ángulo de la casilla ganadora
+      const rotFinal = (gradosFinal) * Math.PI / 180;
+      dibujarRuleta(rotFinal);
     }
-  
-    async function guardarEnGoogleSheets(nombre, numero) {
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbznTAd02Pxqrxc21hZ3WLNhpGd8wjuikVoMmzchTkftED3SonBHuxZMubp9M6fpy0EW/exec';
-      try {
-        await fetch(scriptURL, {
-          method: 'POST',
-          body: new URLSearchParams({ nombre, numero })
-        });
-      } catch (error) {
-        console.warn("Error al guardar en Google Sheets:", error);
-      }
-    }
-  
-    async function generarTicket() {
-      const boton = document.querySelector(".ticket-box button");
-      boton.disabled = true;
-      boton.textContent = "Generando...";
-  
-      const { jsPDF } = window.jspdf;
-      const nombre = document.getElementById("nombre").value.trim();
-      if (!nombre) {
-        alert("Por favor, escribe tu nombre.");
-        boton.disabled = false;
-        boton.textContent = "Generar Ticket";
-        return;
-      }
-  
-      const numero = generarNumero();
-      await guardarEnGoogleSheets(nombre, numero);
-  
-      const doc = new jsPDF();
-      doc.setFontSize(18);
-      doc.text("Ticket de Sorteo - swtptakes", 20, 30);
-      doc.setFontSize(14);
-      doc.text(`Nombre: ${nombre}`, 20, 50);
-      doc.text(`Número asignado: ${numero}`, 20, 65);
-      doc.text("Sorteo finaliza: 30 de junio de 2025", 20, 80);
-      doc.text("Gracias por participar. ¡Buena suerte!", 20, 100);
-      doc.save(`ticket_${numero}.pdf`);
-  
-      document.getElementById("resultado").innerHTML = `<strong>Tu número asignado es:</strong> ${numero}`;
-  
-      // Esperar 5 segundos para volver a habilitar el botón
-      setTimeout(() => {
-        boton.disabled = false;
-        boton.textContent = "Generar Ticket";
-      }, 5000);
-    }
-  </script>
-  
-  
-  
+  }
+  requestAnimationFrame(animarRuleta);
+}
+
+document.getElementById('botonTrebol').addEventListener('click', function(e) {
+  e.preventDefault();
+  this.classList.add('animar-trebol');
+  setTimeout(() => {
+    this.classList.remove('animar-trebol');
+    window.location.href = 'compra.html'; // Redirige a compra.html después de 2 segundos
+  }, 2000);
+});
+</script>
+</body>
+</html>
