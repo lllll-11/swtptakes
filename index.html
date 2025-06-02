@@ -115,12 +115,19 @@ body > * {
 }
 
 .girar-btn:hover {
+  /* Elimina o comenta esta regla para que no se anime al hover */
+  /* transform: scale(1.07) rotate(-1deg);
+  box-shadow: 0 8px 32px 0 rgba(255, 215, 0, 0.5), 0 2px 0 #b8860b inset;
+  background: linear-gradient(90deg, #FF8C00 0%, #FFD700 100%); */
+}
+
+.girar-btn.animar-giro {
   transform: scale(1.07) rotate(-1deg);
   box-shadow: 0 8px 32px 0 rgba(255, 215, 0, 0.5), 0 2px 0 #b8860b inset;
   background: linear-gradient(90deg, #FF8C00 0%, #FFD700 100%);
 }
 
-.girar-btn:hover::before {
+.girar-btn.animar-giro::before {
   left: 120%;
 }
     .productos {
@@ -322,6 +329,12 @@ document.getElementById('botonTrebol').addEventListener('click', function(e) {
     this.classList.remove('animar-trebol');
     window.location.href = 'compra.html'; // Redirige a compra.html después de 2 segundos
   }, 2000);
+});
+
+const girarBtn = document.querySelector('.girar-btn');
+girarBtn.addEventListener('click', function() {
+  this.classList.add('animar-giro');
+  setTimeout(() => this.classList.remove('animar-giro'), 600);
 });
 </script>
 </body>
