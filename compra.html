@@ -312,10 +312,29 @@
   display: inline-block;
 }
 @media (max-width: 600px) {
+  .producto {
+    width: 95vw !important;
+    min-width: unset !important;
+    max-width: 99vw !important;
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem !important;
+  }
+  .producto img {
+    width: 90px !important;
+    height: 90px !important;
+  }
+  .productos {
+    gap: 1.2rem !important;
+    margin: 2rem 0 !important;
+  }
   .regresar-btn.left-btn {
-    float: none;
-    margin: 24px auto 0 16px;
-    display: block;
+    margin: 18px 0 0 8px !important;
+    float: none !important;
+    display: block !important;
+  }
+  .header-content {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1rem 0.5rem;
   }
 }
   </style>
