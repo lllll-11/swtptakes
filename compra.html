@@ -121,7 +121,7 @@
   <div class="container">
     <h2>Participa por un iPhone 13 mini (128GB) por solo $50 MXN</h2>
     <img src="iphone.jpeg" alt="iPhone 13 mini" />
-    <p><strong>500 boletos disponibles</strong> — Sorteo el <strong>30 de junio de 2025</strong></p>
+    <p><strong></strong> Sorteo el <strong>30 de junio de 2025</strong></p>
     <p><strong>abre en navegador externo </strong> <strong>para generar tu ticket</strong></p>
     <p><strong>boleto no pagado</strong><strong>, numero no valido</strong></p>
     <p><strong>el ganador sera anunciado en </strong><strong>nuestro perfil de instagram</strong></p>
@@ -133,7 +133,7 @@
       <button>Comprar Boleto</button>
     </a>
     <div class="ticket-box">
-      <p>Después de pagar, escribe tu nombre de usuario de instagram para generar tu ticket único:</p>
+      <p>Después de pagar, escribe tu nombre de usuario de instagram para generar tu ticket único para el iphone 13 mini:</p>
       <input type="text" id="nombre" placeholder="Tu nombre de usuario..." />
       <br/>
       <button onclick="generarTicket()">Generar Ticket</button>
@@ -142,12 +142,11 @@
     <div id="resultado" style="margin-top:20px;"></div>
   </div>
 
-  <hr style="margin:40px 0; border:1px solid #43ea5a;">
 
 <div class="container">
   <h2>Participa por unos AirPods 3ra gen por solo $10 MXN</h2>
   <img src="airpods3ragen.jpeg" alt="AirPods" />
-  <p><strong>1000 boletos disponibles</strong> — Sorteo el <strong>30 de junio de 2025</strong></p>
+  <p><strong></strong> Sorteo el <strong>30 de junio de 2025</strong></p>
   <p><strong>abre en navegador externo </strong> <strong>para generar tu ticket</strong></p>
   <p><strong>boleto no pagado</strong><strong>, numero no valido</strong></p>
   <p><strong>el ganador sera anunciado en </strong><strong>nuestro perfil de instagram</strong></p>
@@ -166,6 +165,26 @@
   </div>
   <strong>el ticket se descarga en PDF automatico</strong>
   <div id="resultado-airpods" style="margin-top:20px;"></div>
+</div>
+<div class="container">
+  <h2>Participa por una Tarjeta Google Play <span style="color:#43ea5a;">GRATIS</span></h2>
+  <img src="tarjeta.jpeg" alt="Tarjeta Google Play" />
+  <p><strong></strong> Sorteo el <strong>30 de junio de 2025</strong></p>
+  <p><strong>abre en navegador externo </strong> <strong>para generar tu ticket</strong></p>
+  <p><strong>boleto no registrado</strong><strong>, numero no valido</strong></p>
+  <p><strong>el ganador sera anunciado en </strong><strong>nuestro perfil de instagram</strong></p>
+  <footer>
+    instagram: <a href="https://instagram.com/swtptakes" target="_blank">swtptakes</a>
+  </footer>
+  <strong>siguenos para mantenerte al tanto</strong></p>
+  <div class="ticket-box">
+    <p>Escribe tu nombre de usuario de instagram para generar tu ticket único para la Tarjeta Google Play:</p>
+    <input type="text" id="nombre-tarjeta" placeholder="Tu nombre de usuario..." />
+    <br/>
+    <button id="btn-tarjeta" onclick="generarTicketTarjeta()">Generar Ticket Tarjeta</button>
+  </div>
+  <strong>el ticket se descarga en PDF automatico</strong>
+  <div id="resultado-tarjeta" style="margin-top:20px;"></div>
 </div>
 <div style="display:flex; justify-content:center; margin: 40px 0 0 0;">
   <button onclick="window.location.href='index.html'">Regresar</button>
@@ -188,10 +207,14 @@
     }
   
     async function guardarEnGoogleSheets(nombre, numero, hoja) {
-      // Usa el nuevo script para los AirPods ("hoja2")
-      const scriptURL = hoja === "hoja2"
-        ? 'https://script.google.com/macros/s/AKfycbzysT7lD8qpeD7kCRCtV5ffggl5H45g0hdTS6i-jfRLBq5gnz7PiAgUPBB9cLiWQ2gRng/exec'
-        : 'https://script.google.com/macros/s/AKfycbznTAd02Pxqrxc21hZ3WLNhpGd8wjuikVoMmzchTkftED3SonBHuxZMubp9M6fpy0EW/exec';
+      let scriptURL;
+      if (hoja === "Hoja 2") {
+        scriptURL = 'https://script.google.com/macros/s/AKfycbzysT7lD8qpeD7kCRCtV5ffggl5H45g0hdTS6i-jfRLBq5gnz7PiAgUPBB9cLiWQ2gRng/exec';
+      } else if (hoja === "tarjeta") {
+        scriptURL = 'https://script.google.com/macros/s/AKfycbyrZsIt80TdSBf1AvrcGOgnbQgdg1uADJu11MyTd9vhXktWI56Rlm6s_Yl6UmXszUsg/exec';
+      } else {
+        scriptURL = 'https://script.google.com/macros/s/AKfycbznTAd02Pxqrxc21hZ3WLNhpGd8wjuikVoMmzchTkftED3SonBHuxZMubp9M6fpy0EW/exec';
+      }
       try {
         await fetch(scriptURL, {
           method: 'POST',
@@ -271,6 +294,41 @@
       setTimeout(() => {
         boton.disabled = false;
         boton.textContent = "Generar Ticket AirPods";
+      }, 5000);
+    }
+    // Para la Tarjeta Google Play (hoja "hoja3")
+    async function generarTicketTarjeta() {
+      const boton = document.getElementById("btn-tarjeta");
+      boton.disabled = true;
+      boton.textContent = "Generando...";
+
+      const { jsPDF } = window.jspdf;
+      const nombre = document.getElementById("nombre-tarjeta").value.trim();
+      if (!nombre) {
+        alert("Por favor, escribe tu nombre.");
+        boton.disabled = false;
+        boton.textContent = "Generar Ticket Tarjeta";
+        return;
+      }
+
+      const numero = generarNumero();
+      await guardarEnGoogleSheets(nombre , numero, "tarjeta");
+
+      const doc = new jsPDF();
+      doc.setFontSize(18);
+      doc.text("Ticket de Sorteo - Tarjeta Google Play - swtptakes", 20, 30);
+      doc.setFontSize(14);
+      doc.text(`Nombre: ${nombre}`, 20, 50);
+      doc.text(`Número asignado: ${numero}`, 20, 65);
+      doc.text("Sorteo finaliza: 30 de junio de 2025", 20, 80);
+      doc.text("Gracias por participar. ¡Buena suerte!", 20, 100);
+      doc.save(`ticket_tarjeta_${numero}.pdf`);
+
+      document.getElementById("resultado-tarjeta").innerHTML = `<strong>Tu número asignado es:</strong> ${numero}`;
+
+      setTimeout(() => {
+        boton.disabled = false;
+        boton.textContent = "Generar Ticket Tarjeta";
       }, 5000);
     }
     document.querySelectorAll('button').forEach(btn => {
