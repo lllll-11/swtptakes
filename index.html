@@ -3,349 +3,346 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bienvenido a SWPStakes</title>
+  <title>swtptakes</title>
+  <link rel="icon" type="image/png" href="WhatsApp Image 2025-06-02 at 8.48.49 PM.jpeg" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-  body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
-  background: url('WhatsApp Image 2025-05-31 at 8.27.54 PM.jpeg') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
-  min-height: 100vh;
-  /* Elimina backdrop-filter aquí */
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.7); /* Ajusta la opacidad si quieres más o menos oscuro */
-  z-index: 0;
-  pointer-events: none;
-}
-
-body > * {
-  position: relative;
-  z-index: 1;
-}
-
-    header {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 2.2rem;
+    body {
       margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f7f7;
+      color: #222;
     }
-
-    .redes a {
-      color: white;
-      margin-left: 1rem;
-      font-size: 1.6rem;
-      transition: color 0.3s;
-    }
-
-    .redes a:hover {
-      color: #ffffff;
-    }
-
-    .ruleta-container {
-      text-align: center;
-      margin-top: 3rem;
-    }
-.ruleta {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  border: 10px solid #FFD700; /* Borde dorado tipo casino */
-  background: transparent;
-  box-shadow: 0 0 40px 0 #FFD70088, 0 0 0 8px #222 inset;
-  position: relative;
-  margin: 0 auto;
-}
-
-    .ruleta::after {
-      content: "";
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 0;
-      border-left: 12px solid transparent;
-      border-right: 12px solid transparent;
-      border-bottom: 20px solid #fcd34d;
-    }
-
-    .girar-btn {
-  margin-top: 1.5rem;
-  padding: 1rem 2.5rem;
-  background: linear-gradient(90deg, #FFD700 0%, #FF8C00 100%);
-  color: #222;
-  font-weight: bold;
-  border: none;
-  border-radius: 50px;
-  font-size: 1.3rem;
-  cursor: pointer;
-  box-shadow: 0 4px 20px 0 rgba(255, 215, 0, 0.3), 0 1.5px 0 #b8860b inset;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.4s;
-  position: relative;
-  overflow: hidden;
-}
-
-.girar-btn::before {
-  content: "";
-  position: absolute;
-  left: -75%;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(120deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
-  transform: skewX(-20deg);
-  transition: left 0.5s;
-  z-index: 1;
-}
-
-.girar-btn:hover {
-  /* Elimina o comenta esta regla para que no se anime al hover */
-  /* transform: scale(1.07) rotate(-1deg);
-  box-shadow: 0 8px 32px 0 rgba(255, 215, 0, 0.5), 0 2px 0 #b8860b inset;
-  background: linear-gradient(90deg, #FF8C00 0%, #FFD700 100%); */
-}
-
-.girar-btn.animar-giro {
-  transform: scale(1.07) rotate(-1deg);
-  box-shadow: 0 8px 32px 0 rgba(255, 215, 0, 0.5), 0 2px 0 #b8860b inset;
-  background: linear-gradient(90deg, #FF8C00 0%, #FFD700 100%);
-}
-
-.girar-btn.animar-giro::before {
-  left: 120%;
-}
     .productos {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      margin: 3rem 0;
+      margin: 4rem 0;
     }
-
     .producto {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
       text-align: center;
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      width: 220px;
+      transition: transform 0.18s;
     }
-
+    .producto:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 8px 32px rgba(34,197,94,0.13);
+    }
     .producto img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 12px rgba(34,197,94,0.10);
+      margin-bottom: 1rem;
     }
-
     .producto p {
-      margin-top: 0.5rem;
+      margin: 0.5rem 0 0 0;
       font-weight: bold;
-      color: #ffffff;
+      color: #222;
+      font-size: 1.1rem;
+    }
+    .producto .gratis {
+      color: #43ea5a;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 0.2rem;
+    }
+    .boton-comprar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      margin: 2.5rem auto 1rem;
+      background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px 0 rgba(106,130,251,0.13), 0 1.5px 0 #fc5c7d inset;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    .boton-comprar:hover {
+      animation: pulseGlow 0.7s;
+      background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+      box-shadow: 0 8px 32px rgba(252,92,125,0.18);
+    }
+    .boton-comprar .fa-ticket-alt {
+      font-size: 1.5rem;
+      color: #fff;
+      filter: drop-shadow(0 0 6px #6a82fb88);
+      transition: transform 0.3s;
+    }
+    .boton-comprar:active .fa-ticket-alt {
+      transform: scale(1.2) rotate(-10deg);
+    }
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(252,92,125,0.5), 0 4px 20px 0 rgba(106,130,251,0.13);
+      }
+      70% {
+        box-shadow: 0 0 0 16px rgba(252,92,125,0), 0 8px 32px rgba(106,130,251,0.18);
+      }
+      100% {
+        box-shadow: 0 4px 20px 0 rgba(106,130,251,0.13);
+      }
+    }
+    .main-header {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 16px rgba(34,197,94,0.07);
+    }
+    .header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1b1b1b;
+      letter-spacing: 2px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-shadow: 0 2px 8px rgba(67,234,90,0.08);
+    }
+    .redes a {
+      color: #1b1b1b;
+      font-size: 1.7rem;
+      margin-left: 1.2rem;
+      transition: color 0.2s;
+      text-decoration: none;
+      vertical-align: middle;
+    }
+    .redes a:hover {
+      color: #91e29c94;
     }
 
-    .boton-comprar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem;
-  margin: 2rem auto 1rem;
-  background: linear-gradient(90deg, #43ea5a 0%, #1e9c36 100%);
-  color: #fff;
-  padding: 1rem 2.5rem;
-  font-size: 1.3rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 4px 20px 0 rgba(34, 197, 94, 0.3), 0 1.5px 0 #166534 inset;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.4s;
-  position: relative;
-  overflow: hidden;
-}
+    /* Estilos para la animación de fondo */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        120deg,
+        #6e037c 0%,
+        #750230 30%,
+        #811102 60%,
+        #502802 80%,
+        #395502 100%
+      );
+      opacity: 0.13;
+      background-size: 300% 300%;
+      animation: flujoFondo 8s linear infinite;
+    }
 
-.boton-comprar .trebol {
-  width: 28px;
-  height: 28px;
-  display: inline-block;
-  vertical-align: middle;
-  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55);
-}
+    @keyframes flujoFondo {
+      10% {
+        background-position: 0% 50%;
+      }
+      70% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-.boton-comprar.animar-trebol .trebol {
-  transform: scale(1.4) rotate(-20deg);
-  filter: drop-shadow(0 0 8px #43ea5a);
-}
-    canvas#ruleta {
-  filter: drop-shadow(0 0 12px #FFD70088);
-}
-.ruleta-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 3rem;
-  width: 100%;
-}
+    .productos, .main-header, .boton-comprar {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contador-titulo {
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      color: #000000;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .contador-reloj {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.4rem;
+      font-family: 'Segoe UI Mono', 'Consolas', monospace;
+      font-size: 1.5rem;
+      gap: 0.15em;
+      background: rgba(0, 0, 0, 0.08);
+      border-radius: 0.7em;
+      padding: 0.3em 0.7em;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contador-reloj .digito {
+      display: inline-block;
+      min-width: 1.5em;
+      text-align: center;
+      background: #fff;
+      color: #000000;
+      border-radius: 0.3em;
+      margin: 0 0.1em;
+      font-weight: bold;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      animation: flip 0.7s;
+    }
+    .contador-reloj .sep {
+      color: #000000;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin: 0 0.1em;
+      opacity: 0.7;
+    }
+    @keyframes flip {
+      0% { transform: rotateX(90deg); background: #43ea5a; color: #fff; }
+      60% { transform: rotateX(-20deg);}
+      100% { transform: rotateX(0deg);}
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>swtptakes</h1>
-    <div class="redes">
-      <a href="https://instagram.com/swtptakes" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
+  <header class="main-header">
+    <div class="header-content">
+      <span class="logo">Swtptakes</span>
+      <nav class="redes">
+        <a href="https://instagram.com/swtptakes" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://facebook.com/swtptakes" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </nav>
     </div>
   </header>
 
-<div class="ruleta-container">
-  <canvas id="ruleta" width="300" height="300" style="border-radius:50%;border:8px solid #fff;background:transparent;"></canvas>
-  <button class="girar-btn" onclick="girarRuleta()">Girar</button>
-</div>
+  <!-- Animación de fondo -->
+  <div class="animated-bg"></div>
+
   <div class="productos">
     <div class="producto">
       <img src="iphone.jpeg" alt="Producto 1">
       <p>iPhone 13 Mini</p>
+      <div class="contador-titulo">Termina en:</div>
+      <div id="contador-iphone" class="contador-reloj">
+        <span class="digito" id="horas-iphone">00</span><span class="sep">:</span>
+        <span class="digito" id="minutos-iphone">00</span><span class="sep">:</span>
+        <span class="digito" id="segundos-iphone">00</span>
+      </div>
     </div>
-  <div class="producto">
-    <img src="airpods3ragen.jpeg" alt="Producto 2">
-    <p>AirPods 3ra gen</p>
-  </div>
-  <div class="producto">
-    <img src="tarjeta.jpeg" alt="Tarjeta Google Play">
-    <p>Tarjeta Google Play</p>
-        <p>(GRATIS)</p>
-
-  </div>
-  </div>
-
-<button class="boton-comprar" id="botonTrebol">
-  <span>Comprar Boletos</span>
-  <span class="trebol">
-    <svg viewBox="0 0 32 32" fill="#43ea5a" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="8" r="7"/>
-      <circle cx="8" cy="18" r="7"/>
-      <circle cx="24" cy="18" r="7"/>
-      <rect x="14" y="18" width="4" height="10" rx="2" fill="#1e9c36"/>
-    </svg>
-  </span>
-</button>
-
-  <div class="info-extra">
+    <div class="producto">
+      <img src="airpods3ragen.jpeg" alt="Producto 2">
+      <p>AirPods 3ra gen</p>
+      <div class="contador-titulo">Termina en:</div>
+      <div id="contador-airpods" class="contador-reloj">
+        <span class="digito" id="horas-airpods">00</span><span class="sep">:</span>
+        <span class="digito" id="minutos-airpods">00</span><span class="sep">:</span>
+        <span class="digito" id="segundos-airpods">00</span>
+      </div>
+    </div>
+    <div class="producto">
+      <img src="tarjeta.jpeg" alt="Tarjeta Google Play">
+      <p>Tarjeta Google Play</p>
+      <div class="gratis">(GRATIS)</div>
+      <div class="contador-titulo">Termina en:</div>
+      <div id="contador-tarjeta" class="contador-reloj">
+        <span class="digito" id="horas-tarjeta">00</span><span class="sep">:</span>
+        <span class="digito" id="minutos-tarjeta">00</span><span class="sep">:</span>
+        <span class="digito" id="segundos-tarjeta">00</span>
+      </div>
+    </div>
   </div>
 
-<script>
-const premios = [
-  "iPhone 13 Mini",
-  "AirPods",
-  "Apple Watch",
-  "Camiseta",
-  "de nuevo",
-  "suerte!",
-];
-const num = premios.length;
-const verdeIndex = num - 1; // La última casilla será verde y la ganadora
+  <button class="boton-comprar" id="botonTrebol">
+    <i class="fas fa-ticket-alt"></i>
+    <span>Comprar Boletos</span>
+  </button>
 
-const colores = Array(num).fill().map((_, i) =>
-  i === verdeIndex ? "#388E3C" : (i % 2 === 0 ? "#D32F2F" : "#222")
-);
-
-const canvas = document.getElementById("ruleta");
-const ctx = canvas.getContext("2d");
-const size = canvas.width;
-const radio = size / 2;
-
-function dibujarRuleta(rotacion = 0) {
-  ctx.clearRect(0, 0, size, size);
-  for (let i = 0; i < num; i++) {
-    const angInicio = ((2 * Math.PI) / num) * i + rotacion;
-    const angFin = angInicio + (2 * Math.PI) / num;
-    // Dibuja sector
-    ctx.beginPath();
-    ctx.moveTo(radio, radio);
-    ctx.arc(radio, radio, radio - 8, angInicio, angFin);
-    ctx.closePath();
-    ctx.fillStyle = colores[i];
-    ctx.fill();
-    // Dibuja texto
-    ctx.save();
-    ctx.translate(radio, radio);
-    ctx.rotate(angInicio + (angFin - angInicio) / 2);
-    ctx.textAlign = "right";
-    ctx.fillStyle = "#fff";
-    ctx.font = "bold 16px Segoe UI";
-    ctx.shadowColor = "#000";
-    ctx.shadowBlur = 4;
-    ctx.fillText(premios[i], radio - 30, 8);
-    ctx.restore();
-  }
-  // Dibuja flecha
-  ctx.beginPath();
-  ctx.moveTo(radio, 10);
-  ctx.lineTo(radio - 12, 30);
-  ctx.lineTo(radio + 12, 30);
-  ctx.closePath();
-  ctx.fillStyle = "#fcd34d";
-  ctx.shadowColor = "#222";
-  ctx.shadowBlur = 8;
-  ctx.fill();
-  ctx.shadowBlur = 0;
-}
-dibujarRuleta();
-
-function girarRuleta() {
-  // Siempre cae en la casilla verde (la última)
-  const casillaGanadora = verdeIndex;
-  const gradosPorSector = 360 / num;
-  // El ángulo objetivo es el centro de la casilla ganadora, ajustado -90° para que la flecha apunte arriba
-  const gradosFinal = 360 * 5 + (270 - casillaGanadora * gradosPorSector - gradosPorSector / 2);
-  let rot = 0;
-  let start = null;
-  function animarRuleta(ts) {
-    if (!start) start = ts;
-    const progreso = Math.min((ts - start) / 6000, 1);
-    const ease = 1 - Math.pow(1 - progreso, 3);
-    rot = (gradosFinal * ease) * Math.PI / 180;
-    dibujarRuleta(rot);
-    if (progreso < 1) {
-      requestAnimationFrame(animarRuleta);
-    } else {
-      // Al terminar, ajusta la ruleta exactamente al ángulo de la casilla ganadora
-      const rotFinal = (gradosFinal) * Math.PI / 180;
-      dibujarRuleta(rotFinal);
-    }
-  }
-  requestAnimationFrame(animarRuleta);
-}
-
+  <script>
 document.getElementById('botonTrebol').addEventListener('click', function(e) {
   e.preventDefault();
   this.classList.add('animar-trebol');
   setTimeout(() => {
     this.classList.remove('animar-trebol');
-    window.location.href = 'compra.html'; // Redirige a compra.html después de 2 segundos
-  }, 2000);
+    window.location.href = 'compra.html';
+  }, 1000); // Cambiado de 5000 a 2000 (2 segundos)
 });
 
-const girarBtn = document.querySelector('.girar-btn');
-girarBtn.addEventListener('click', function() {
-  this.classList.add('animar-giro');
-  setTimeout(() => this.classList.remove('animar-giro'), 600);
-});
-</script>
+    // Fechas de fin para cada sorteo
+    const fechasFin = {
+      iphone: new Date(new Date().getFullYear(), 5, 30, 23, 59, 59),   // 30 de junio
+      airpods: new Date(new Date().getFullYear(), 5, 30, 23, 59, 59),  // 30 de junio
+      tarjeta: new Date(new Date().getFullYear(), 5, 8, 23, 59, 59)    // 8 de junio
+    };
+
+    function pad(n) {
+      return n < 10 ? '0' + n : n;
+    }
+
+    function actualizaContadorProducto(producto, fechaFin) {
+      const ahora = new Date();
+      let diff = fechaFin - ahora;
+      if (diff < 0) diff = 0;
+      const horas = Math.floor(diff / (1000 * 60 * 60));
+      const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+
+      function actualizaDigito(id, valor) {
+        const el = document.getElementById(id);
+        if (el && el.textContent !== pad(valor)) {
+          el.textContent = pad(valor);
+          el.classList.remove('animando');
+          void el.offsetWidth; // trigger reflow
+          el.classList.add('animando');
+        }
+      }
+
+      actualizaDigito('horas-' + producto, horas);
+      actualizaDigito('minutos-' + producto, minutos);
+      actualizaDigito('segundos-' + producto, segundos);
+    }
+
+    // Animación flip para cada cambio
+    document.querySelectorAll('.contador-reloj .digito').forEach(el => {
+      el.addEventListener('animationend', () => {
+        el.classList.remove('animando');
+      });
+    });
+
+    setInterval(() => {
+      actualizaContadorProducto('iphone', fechasFin.iphone);
+      actualizaContadorProducto('airpods', fechasFin.airpods);
+      actualizaContadorProducto('tarjeta', fechasFin.tarjeta);
+    }, 1000);
+
+    // Inicializa al cargar
+    actualizaContadorProducto('iphone', fechasFin.iphone);
+    actualizaContadorProducto('airpods', fechasFin.airpods);
+    actualizaContadorProducto('tarjeta', fechasFin.tarjeta);
+  </script>
 </body>
 </html>

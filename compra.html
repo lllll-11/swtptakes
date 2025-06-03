@@ -2,201 +2,428 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sorteo iPhone 13 mini | swtptakes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>swtptakes</title>
+  <link rel="icon" type="image/png" href="WhatsApp Image 2025-06-02 at 8.48.49 PM.jpeg" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://apis.google.com/js/api.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #fff;
-      background: url('WhatsApp Image 2025-05-31 at 8.27.54 PM.jpeg') no-repeat center center fixed;
-      background-size: cover;
+      color: #222;
+      background: #f7f7f7;
       min-height: 100vh;
       position: relative;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
-      z-index: 0;
-      pointer-events: none;
+    .main-header {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 16px rgba(106,130,251,0.07);
     }
-    body > * {
-      position: relative;
-      z-index: 1;
+    .header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
     }
-    header {
-      padding: 25px;
-      background: rgba(0,0,0,0.7);
-      color: #fff;
-      font-size: 26px;
+    .logo {
+      font-size: 2rem;
       font-weight: 700;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: #000000;
+      letter-spacing: 2px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-shadow: 0 2px 8px rgba(106,130,251,0.08);
     }
-    img {
-      width: 260px;
-      margin: 25px auto;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-      display: block;
+    .redes a {
+      color: #000000;
+      font-size: 1.7rem;
+      margin-left: 1.2rem;
+      transition: color 0.2s;
+      text-decoration: none;
+      vertical-align: middle;
     }
-    .container {
-      max-width: 640px;
-      margin: 40px auto;
-      padding: 30px;
-      background: rgba(34,34,34,0.85);
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    .redes a:hover {
+      color: #6a82fb;
     }
-    input {
-      padding: 12px;
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    .productos-columna {
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+.producto {
+  background: #f3f4f8; /* gris claro */
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem 2rem 2rem; /* ligeramente más padding */
+  width: 475px; /* 25% más grande que 380px */
+  transition: transform 0.18s;
+  position: relative;
+}
+    .producto:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 8px 32px rgba(106,130,251,0.13);
+    }
+   .producto img {
+  width: 150px;   /* 25% más grande que 120px */
+  height: 150px;
+  border-radius: 16px;
+  object-fit: contain;
+  box-shadow: 0 0 12px rgba(106,130,251,0.10);
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+}
+    .producto h2,
+    .producto p,
+    .producto strong,
+    .producto .ticket-info,
+    .producto .ticket-box,
+    .producto .resultado,
+    .producto footer {
+      color: #111 !important;
+      text-align: left;
+    }
+    .producto p, .producto strong {
+      margin: 0.5rem 0 0 0;
+      font-weight: bold;
+      color: #222;
+      font-size: 1.1rem;
+    }
+    .producto .gratis {
+      color: #fc5c7d;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 0.2rem;
+    }
+    .producto .ticket-box {
+      margin-top: 18px;
+      font-size: 1rem;
+      color: #222;
+    }
+    .producto input[type="text"] {
+      padding: 10px;
       width: 80%;
-      margin: 12px 0;
+      margin: 10px 0;
       border-radius: 8px;
-      border: 1px solid #43ea5a;
+      border: 1px solid #6a82fb;
       font-size: 16px;
-      background: #222;
-      color: #fff;
+      background: #f7f7f7;
+      color: #222;
+      outline: none;
+      transition: border 0.2s;
     }
-    input::placeholder {
-      color: #b5f5c6;
+    .producto input[type="text"]:focus {
+      border: 1.5px solid #fc5c7d;
+    }
+    .producto input::placeholder {
+      color: #b5b5b5;
       opacity: 1;
     }
-    button, .container a > button {
-      background: linear-gradient(90deg, #43ea5a 0%, #1e9c36 100%);
-      color: #fff;
-      padding: 12px 28px;
-      font-size: 18px;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.4s;
+    .producto button,
+    .producto a > button {
+      background: #fff;
+      color: #222;
+      border: 1.5px solid #b5b5b5;
+      border-radius: 8px;
       font-weight: 600;
-      box-shadow: 0 4px 20px 0 rgba(34, 197, 94, 0.3), 0 1.5px 0 #166534 inset;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      padding: 12px 28px;
+      font-size: 17px;
+      text-transform: none;
+      letter-spacing: normal;
       margin: 10px 0;
+      cursor: pointer;
+      box-shadow: none;
+      transition: 
+        background 0.2s,
+        color 0.2s,
+        border 0.2s,
+        box-shadow 0.3s,
+        transform 0.18s cubic-bezier(.68,-0.55,.27,1.55);
+      outline: none;
       position: relative;
       overflow: hidden;
     }
-    /* Nueva clase para animación al hacer clic */
-    button.animar-clic, .container a > button.animar-clic {
-      transform: scale(1.07) rotate(-1deg);
-      background: linear-gradient(90deg, #1e9c36 0%, #43ea5a 100%);
-      box-shadow: 0 8px 32px 0 rgba(34, 197, 94, 0.5), 0 2px 0 #166534 inset;
+    .producto button:hover,
+    .producto a > button:hover {
+      background: #f7f7f7;
+      color: #6a82fb;
+      border-color: #6a82fb;
+      box-shadow: 0 4px 18px rgba(106,130,251,0.10);
+      transform: translateY(-2px) scale(1.04);
     }
-    .ticket-box {
-      margin-top: 25px;
-      font-size: 17px;
-      color: #fff;
+    .producto button:active,
+    .producto a > button:active {
+      background: #eaeaff;
+      color: #fc5c7d;
+      border-color: #fc5c7d;
+      transform: scale(0.98);
     }
-    footer {
-      margin-top: 50px;
-      font-size: 15px;
-      color: #b5f5c6;
+    .producto a {
+      text-decoration: none;
+    }
+    .producto footer {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #6a82fb;
       background: transparent;
     }
-    a {
-      color: #43ea5a;
-      text-decoration: none;
+    .producto strong {
+      color: #fc5c7d;
+    }
+    .producto .ticket-info {
+      color: #222;
+      font-size: 0.98rem;
+      margin-bottom: 0.5rem;
+    }
+    .producto .resultado {
+      margin-top: 12px;
+      color: #6a82fb;
+      font-weight: bold;
+    }
+    .regresar-btn {
+      display: block;
+      margin: 32px auto 0 auto;
+      background: #fff;
+      color: #222;
+      border: 1.5px solid #b5b5b5;
+      border-radius: 8px;
       font-weight: 600;
+      padding: 12px 32px;
+      font-size: 18px;
+      letter-spacing: normal;
+      text-transform: none;
+      cursor: pointer;
+      box-shadow: none;
+      transition: background 0.2s, color 0.2s, border 0.2s, transform 0.18s cubic-bezier(.68,-0.55,.27,1.55);
     }
-    a:hover {
-      text-decoration: underline;
+    .regresar-btn:hover {
+      background: #f7f7f7;
+      color: #6a82fb;
+      border-color: #6a82fb;
+      transform: translateY(-2px) scale(1.04);
     }
-    strong {
-      color: #fff;
+    footer.main-footer {
+      margin-top: 50px;
+      font-size: 15px;
+      color: #6a82fb;
+      background: transparent;
+      text-align: center;
     }
+    /* Fondo animado */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        120deg,
+        #6e037c 0%,
+        #750230 30%,
+        #811102 60%,
+        #502802 80%,
+        #395502 100%
+      );
+      opacity: 0.13;
+      background-size: 300% 300%;
+      animation: flujoFondo 8s linear infinite;
+    }
+    @keyframes flujoFondo {
+      0% { background-position: 0% 50%; }
+      70% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .main-header, .productos, .regresar-btn {
+      position: relative;
+      z-index: 1;
+    }
+    .resultado-animado {
+  display: inline-block;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #fc5c7d;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(252,92,125,0.13);
+  padding: 0.5em 1.2em;
+  margin: 1em 0;
+  animation: emergeTicket 1s cubic-bezier(.68,-0.55,.27,1.55);
+  position: relative;
+  z-index: 2;
+}
+@keyframes emergeTicket {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(80px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.15) translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+/* Confeti */
+.confeti {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+.confeti-piece {
+  position: absolute;
+  width: 12px;
+  height: 18px;
+  border-radius: 3px;
+  opacity: 0.85;
+  animation: confeti-fall 1.2s linear forwards;
+}
+@keyframes confeti-fall {
+  0% { opacity: 1; transform: translateY(0) rotate(0deg);}
+  80% { opacity: 1;}
+  100% { opacity: 0; transform: translateY(120px) rotate(360deg);}
+}
+.regresar-btn.left-btn {
+  margin: 32px 0 0 40px;
+  float: left;
+  display: inline-block;
+}
+@media (max-width: 600px) {
+  .regresar-btn.left-btn {
+    float: none;
+    margin: 24px auto 0 16px;
+    display: block;
+  }
+}
   </style>
 </head>
 <body>
-  <header> Sorteo - swtptakes</header>
-    <header> ❗LEER REGLAS❗</header>
-
-
-  <div class="container">
-    <h2>Participa por un iPhone 13 mini (128GB) por solo $50 MXN</h2>
-    <img src="iphone.jpeg" alt="iPhone 13 mini" />
-    <p><strong></strong> Sorteo el <strong>30 de junio de 2025</strong></p>
-    <p><strong>abre en navegador externo </strong> <strong>para generar tu ticket</strong></p>
-    <p><strong>boleto no pagado</strong><strong>, numero no valido</strong></p>
-    <p><strong>el ganador sera anunciado en </strong><strong>nuestro perfil de instagram</strong></p>
-    <footer>
-    instagram: <a href="https://instagram.com/swtptakes" target="_blank">swtptakes</a>
-  </footer>
-  <strong>siguenos para mantenerte al tanto</strong></p>
-    <a href="https://mpago.li/1hiLdA9" target="_blank">
-      <button>Comprar Boleto</button>
-    </a>
-    <div class="ticket-box">
-      <p>Después de pagar, escribe tu nombre de usuario de instagram para generar tu ticket único para el iphone 13 mini:</p>
-      <input type="text" id="nombre" placeholder="Tu nombre de usuario..." />
-      <br/>
-      <button onclick="generarTicket()">Generar Ticket</button>
+  <div class="animated-bg"></div>
+  <header class="main-header">
+    <div class="header-content">
+      <span class="logo">Swtptakes</span>
+      <nav class="redes">
+        <a href="https://instagram.com/swtptakes" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://facebook.com/swtptakes" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </nav>
     </div>
-    <strong>el ticket se descarga en PDF automatico</strong></p>
-    <div id="resultado" style="margin-top:20px;"></div>
+  </header>
+  <button class="regresar-btn left-btn" onclick="window.location.href='index.html'">Regresar</button>
+  <div class="productos productos-columna">
+    <!-- Tarjeta Google Play primero -->
+    <div class="producto">
+      <h2>Participa por una Tarjeta Google Play <span class="gratis">GRATIS</span></h2>
+      <img src="tarjeta.jpeg" alt="Tarjeta Google Play" />
+      <p><strong>Sorteo el 8 de junio de 2025</strong></p>
+      <div class="ticket-info">
+        <p><strong>Abre en navegador externo para generar tu ticket</strong></p>
+        <p><strong>Boleto no registrado, número no válido</strong></p>
+        <p><strong>El ganador será anunciado en nuestro perfil de instagram</strong></p>
+      </div>
+      <footer>
+        instagram: <a href="https://instagram.com/swtptakes" target="_blank">swtptakes</a>
+      </footer>
+      <strong>Síguenos para mantenerte al tanto</strong>
+      <div class="ticket-box">
+        <p>Escribe tu nombre de usuario de instagram para generar tu ticket único para la Tarjeta Google Play:</p>
+        <input type="text" id="nombre-tarjeta" placeholder="Tu nombre de usuario..." />
+        <br/>
+        <button id="btn-tarjeta" onclick="generarTicketTarjeta()">Generar Ticket Tarjeta</button>
+      </div>
+      <div class="resultado" id="resultado-tarjeta"></div>
+      <strong>El ticket se descarga en PDF automático</strong>
+    </div>
+
+    <!-- AirPods segundo -->
+    <div class="producto">
+      <h2>Participa por unos AirPods 3ra gen por solo $10 MXN</h2>
+      <img src="airpods3ragen.jpeg" alt="AirPods" />
+      <p><strong>Sorteo el 30 de junio de 2025</strong></p>
+      <div class="ticket-info">
+        <p><strong>Abre en navegador externo para generar tu ticket</strong></p>
+        <p><strong>Boleto no pagado, número no válido</strong></p>
+        <p><strong>El ganador será anunciado en nuestro perfil de instagram</strong></p>
+      </div>
+      <footer>
+        instagram: <a href="https://instagram.com/swtptakes" target="_blank">swtptakes</a>
+      </footer>
+      <strong>Síguenos para mantenerte al tanto</strong>
+      <a href="https://mpago.li/1cJpzb3" target="_blank">
+        <button>Comprar Boleto AirPods</button>
+      </a>
+      <div class="ticket-box">
+        <p>Después de pagar, escribe tu nombre de usuario de instagram para generar tu ticket único para los AirPods:</p>
+        <input type="text" id="nombre-airpods" placeholder="Tu nombre de usuario..." />
+        <br/>
+        <button id="btn-airpods" onclick="generarTicketAirpods()">Generar Ticket AirPods</button>
+      </div>
+      <div class="resultado" id="resultado-airpods"></div>
+      <strong>El ticket se descarga en PDF automático</strong>
+    </div>
+
+    <!-- iPhone al final -->
+    <div class="producto">
+      <h2>Participa por un iPhone 13 mini (128GB) por solo $50 MXN</h2>
+      <img src="iphone.jpeg" alt="iPhone 13 mini" />
+      <p><strong>Sorteo el 30 de junio de 2025</strong></p>
+      <div class="ticket-info">
+        <p><strong>Abre en navegador externo para generar tu ticket</strong></p>
+        <p><strong>Boleto no pagado, número no válido</strong></p>
+        <p><strong>El ganador será anunciado en nuestro perfil de instagram</strong></p>
+      </div>
+      <footer>
+        instagram: <a href="https://instagram.com/swtptakes" target="_blank">swtptakes</a>
+      </footer>
+      <strong>Síguenos para mantenerte al tanto</strong>
+      <a href="https://mpago.li/1hiLdA9" target="_blank">
+        <button>Comprar Boleto</button>
+      </a>
+      <div class="ticket-box">
+        <p>Después de pagar, escribe tu nombre de usuario de instagram para generar tu ticket único para el iPhone 13 mini:</p>
+        <input type="text" id="nombre" placeholder="Tu nombre de usuario..." />
+        <br/>
+        <button onclick="generarTicket()">Generar Ticket</button>
+      </div>
+      <div class="resultado" id="resultado"></div>
+      <strong>El ticket se descarga en PDF automático</strong>
+    </div>
   </div>
 
-
-<div class="container">
-  <h2>Participa por unos AirPods 3ra gen por solo $10 MXN</h2>
-  <img src="airpods3ragen.jpeg" alt="AirPods" />
-  <p><strong></strong> Sorteo el <strong>30 de junio de 2025</strong></p>
-  <p><strong>abre en navegador externo </strong> <strong>para generar tu ticket</strong></p>
-  <p><strong>boleto no pagado</strong><strong>, numero no valido</strong></p>
-  <p><strong>el ganador sera anunciado en </strong><strong>nuestro perfil de instagram</strong></p>
-  <footer>
-    instagram: <a href="https://instagram.com/swtptakes" target="_blank">swtptakes</a>
-  </footer>
-  <strong>siguenos para mantenerte al tanto</strong></p>
-  <a href="https://mpago.li/1cJpzb3" target="_blank">
-    <button>Comprar Boleto AirPods</button>
-  </a>
-  <div class="ticket-box">
-    <p>Después de pagar, escribe tu nombre de usuario de instagram para generar tu ticket único para los AirPods:</p>
-    <input type="text" id="nombre-airpods" placeholder="Tu nombre de usuario..." />
-    <br/>
-    <button id="btn-airpods" onclick="generarTicketAirpods()">Generar Ticket AirPods</button>
-  </div>
-  <strong>el ticket se descarga en PDF automatico</strong>
-  <div id="resultado-airpods" style="margin-top:20px;"></div>
-</div>
-<div class="container">
-  <h2>Participa por una Tarjeta Google Play <span style="color:#43ea5a;">GRATIS</span></h2>
-  <img src="tarjeta.jpeg" alt="Tarjeta Google Play" />
-  <p><strong></strong> Sorteo el <strong>30 de junio de 2025</strong></p>
-  <p><strong>abre en navegador externo </strong> <strong>para generar tu ticket</strong></p>
-  <p><strong>boleto no registrado</strong><strong>, numero no valido</strong></p>
-  <p><strong>el ganador sera anunciado en </strong><strong>nuestro perfil de instagram</strong></p>
-  <footer>
-    instagram: <a href="https://instagram.com/swtptakes" target="_blank">swtptakes</a>
-  </footer>
-  <strong>siguenos para mantenerte al tanto</strong></p>
-  <div class="ticket-box">
-    <p>Escribe tu nombre de usuario de instagram para generar tu ticket único para la Tarjeta Google Play:</p>
-    <input type="text" id="nombre-tarjeta" placeholder="Tu nombre de usuario..." />
-    <br/>
-    <button id="btn-tarjeta" onclick="generarTicketTarjeta()">Generar Ticket Tarjeta</button>
-  </div>
-  <strong>el ticket se descarga en PDF automatico</strong>
-  <div id="resultado-tarjeta" style="margin-top:20px;"></div>
-</div>
-<div style="display:flex; justify-content:center; margin: 40px 0 0 0;">
-  <button onclick="window.location.href='index.html'">Regresar</button>
-</div>
-
-  <footer>
+  <footer class="main-footer">
     Organizado por <strong>swtptakes</strong> | Contacto: <a href="https://instagram.com/swtptakes" target="_blank">@swtptakes</a>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>
     const usados = new Set();
-  
+
     function generarNumero() {
       let num;
       do {
@@ -205,7 +432,7 @@
       usados.add(num);
       return num;
     }
-  
+
     async function guardarEnGoogleSheets(nombre, numero, hoja) {
       let scriptURL;
       if (hoja === "Hoja 2") {
@@ -224,13 +451,13 @@
         console.warn("Error al guardar en Google Sheets:", error);
       }
     }
-  
+
     // Para el iPhone (hoja "prueba")
     async function generarTicket() {
-      const boton = document.querySelector(".ticket-box button");
+      const boton = document.querySelector('.producto input#nombre').parentElement.querySelector('button');
       boton.disabled = true;
       boton.textContent = "Generando...";
-  
+
       const { jsPDF } = window.jspdf;
       const nombre = document.getElementById("nombre").value.trim();
       if (!nombre) {
@@ -239,10 +466,10 @@
         boton.textContent = "Generar Ticket";
         return;
       }
-  
+
       const numero = generarNumero();
       await guardarEnGoogleSheets(nombre, numero, "prueba");
-  
+
       const doc = new jsPDF();
       doc.setFontSize(18);
       doc.text("Ticket de Sorteo - swtptakes", 20, 30);
@@ -252,16 +479,16 @@
       doc.text("Sorteo finaliza: 30 de junio de 2025", 20, 80);
       doc.text("Gracias por participar. ¡Buena suerte!", 20, 100);
       doc.save(`ticket_${numero}.pdf`);
-  
-      document.getElementById("resultado").innerHTML = `<strong>Tu número asignado es:</strong> ${numero}`;
-  
-      // Esperar 5 segundos para volver a habilitar el botón
+
+      mostrarNumeroAnimado("resultado", numero);
+
       setTimeout(() => {
         boton.disabled = false;
         boton.textContent = "Generar Ticket";
-      }, 5000);
+      }, 2000);
     }
-    // Para los AirPods (hoja "hoja2")
+
+    // Para los AirPods (hoja "Hoja 2")
     async function generarTicketAirpods() {
       const boton = document.getElementById("btn-airpods");
       boton.disabled = true;
@@ -277,7 +504,7 @@
       }
 
       const numero = generarNumero();
-      await guardarEnGoogleSheets(nombre , numero, "hoja2");
+      await guardarEnGoogleSheets(nombre, numero, "Hoja 2");
 
       const doc = new jsPDF();
       doc.setFontSize(18);
@@ -289,14 +516,15 @@
       doc.text("Gracias por participar. ¡Buena suerte!", 20, 100);
       doc.save(`ticket_airpods_${numero}.pdf`);
 
-      document.getElementById("resultado-airpods").innerHTML = `<strong>Tu número asignado es:</strong> ${numero}`;
+      mostrarNumeroAnimado("resultado-airpods", numero);
 
       setTimeout(() => {
         boton.disabled = false;
         boton.textContent = "Generar Ticket AirPods";
-      }, 5000);
+      }, 2000);
     }
-    // Para la Tarjeta Google Play (hoja "hoja3")
+
+    // Para la Tarjeta Google Play (hoja "tarjeta")
     async function generarTicketTarjeta() {
       const boton = document.getElementById("btn-tarjeta");
       boton.disabled = true;
@@ -312,7 +540,7 @@
       }
 
       const numero = generarNumero();
-      await guardarEnGoogleSheets(nombre , numero, "tarjeta");
+      await guardarEnGoogleSheets(nombre, numero, "tarjeta");
 
       const doc = new jsPDF();
       doc.setFontSize(18);
@@ -320,25 +548,80 @@
       doc.setFontSize(14);
       doc.text(`Nombre: ${nombre}`, 20, 50);
       doc.text(`Número asignado: ${numero}`, 20, 65);
-      doc.text("Sorteo finaliza: 30 de junio de 2025", 20, 80);
+      doc.text("Sorteo finaliza: 8 de junio de 2025", 20, 80);
       doc.text("Gracias por participar. ¡Buena suerte!", 20, 100);
       doc.save(`ticket_tarjeta_${numero}.pdf`);
 
-      document.getElementById("resultado-tarjeta").innerHTML = `<strong>Tu número asignado es:</strong> ${numero}`;
+      mostrarNumeroAnimado("resultado-tarjeta", numero);
 
       setTimeout(() => {
         boton.disabled = false;
         boton.textContent = "Generar Ticket Tarjeta";
-      }, 5000);
+      }, 2000);
     }
-    document.querySelectorAll('button').forEach(btn => {
+
+    // Animación de clic en botones
+    document.querySelectorAll('.producto button').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        if (this.disabled) return;
+        this.classList.add('animar-clic');
+        setTimeout(() => this.classList.remove('animar-clic'), 400);
+      });
+    });
+
+document.querySelectorAll('.producto a > button, .producto a button').forEach(btn => {
   btn.addEventListener('click', function(e) {
-    // Evita animar el botón si está deshabilitado
-    if (this.disabled) return;
-    this.classList.add('animar-clic');
-    setTimeout(() => this.classList.remove('animar-clic'), 400);
+    e.preventDefault();
+    const enlace = this.closest('a');
+    if (enlace && enlace.href) {
+      this.disabled = true;
+      this.textContent = "Redirigiendo...";
+      setTimeout(() => {
+        window.open(enlace.href, enlace.target || "_self");
+        this.disabled = false;
+        this.textContent = this.getAttribute('data-original-text') || "Comprar";
+      }, 1000);
+    }
   });
 });
+
+// Guarda el texto original de los botones para restaurarlo después
+document.querySelectorAll('.producto a > button, .producto a button').forEach(btn => {
+  btn.setAttribute('data-original-text', btn.textContent);
+});
+
+// Reemplaza la línea donde se muestra el número en cada función generarTicket*
+function mostrarNumeroAnimado(idContenedor, numero) {
+  const contenedor = document.getElementById(idContenedor);
+  // Limpia antes de mostrar
+  contenedor.innerHTML = "";
+  // Crea el número animado
+  const numDiv = document.createElement("div");
+  numDiv.className = "resultado-animado";
+  numDiv.textContent = numero;
+  contenedor.appendChild(numDiv);
+
+  // Confeti
+  const confeti = document.createElement("div");
+  confeti.className = "confeti";
+  contenedor.appendChild(confeti);
+  lanzarConfeti(confeti);
+  setTimeout(() => confeti.remove(), 1400);
+}
+
+// Confeti simple
+function lanzarConfeti(contenedor) {
+  const colores = ["#fc5c7d", "#6a82fb", "#ffd700", "#43ea5a", "#ffb347"];
+  for (let i = 0; i < 24; i++) {
+    const piece = document.createElement("div");
+    piece.className = "confeti-piece";
+    piece.style.background = colores[Math.floor(Math.random() * colores.length)];
+    piece.style.left = (Math.random() * 120 - 60) + "px";
+    piece.style.animationDelay = (Math.random() * 0.3) + "s";
+    piece.style.transform = `rotate(${Math.random()*360}deg)`;
+    contenedor.appendChild(piece);
+  }
+}
   </script>
 </body>
 </html>
