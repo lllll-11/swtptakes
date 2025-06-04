@@ -76,6 +76,7 @@
       position: relative;
       border: 1.5px solid #e6e8f0;
       text-align: center;
+      margin-top: 2.5em;
     }
     .producto:hover {
       transform: translateY(-8px) scale(1.03);
@@ -95,15 +96,16 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .producto h2,
-    .producto p,
-    .producto strong,
-    .producto .ticket-info,
-    .producto .ticket-box,
-    .producto .resultado,
-    .producto footer {
-      color: #232323 !important;
-      text-align: center;
+    .producto h2 {
+      font-size: 1.35em;
+      font-weight: 700;
+      color: #181818;
+      margin-bottom: 0.5em;
+    }
+    .producto label {
+      font-size: 1em;
+      color: #181818;
+      font-weight: 600;
     }
     .producto p, .producto strong {
       margin: 0.5rem 0 0 0;
@@ -131,7 +133,7 @@
       border: 1.5px solid #b5b5b5;
       font-size: 16px;
       background: #f7f7fb;
-      color: #232323;
+      color: #181818;
       outline: none;
       transition: border 0.2s;
     }
@@ -144,7 +146,7 @@
     }
     .producto button,
     .producto a > button {
-      background: linear-gradient(90deg, #5b7cfa 0%, #fc5c7d 100%);
+      background: linear-gradient(90deg, #4666e5 0%, #5b7cfa 100%);
       color: #fff;
       border: none;
       border-radius: 8px;
@@ -165,10 +167,13 @@
       outline: none;
       position: relative;
       overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6em;
     }
     .producto button:hover,
     .producto a > button:hover {
-      background: linear-gradient(90deg, #4a5fc1 0%, #e04c6a 100%);
+      background: linear-gradient(90deg, #3550b8 0%, #4666e5 100%);
       color: #fff;
       box-shadow: 0 8px 32px rgba(91,124,250,0.13);
       transform: translateY(-2px) scale(1.04);
@@ -176,8 +181,8 @@
     .producto button:active,
     .producto a > button:active {
       background: #eaeaff;
-      color: #5b7cfa;
-      border-color: #5b7cfa;
+      color: #4666e5;
+      border-color: #4666e5;
       transform: scale(0.98);
     }
     .producto a {
@@ -201,17 +206,20 @@
       margin-top: 12px;
       color: #5b7cfa;
       font-weight: bold;
+      font-size: 1.2em;
     }
     .regresar-btn {
-      display: block;
-      margin: 40px auto 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      margin: 32px auto 0 auto;
       background: #fff;
-      color: #232323;
+      color: #181818;
       border: 1.5px solid #b5b5b5;
       border-radius: 8px;
       font-weight: 600;
-      padding: 12px 32px;
-      font-size: 18px;
+      padding: 10px 24px;
+      font-size: 16px;
       letter-spacing: normal;
       text-transform: none;
       cursor: pointer;
@@ -230,6 +238,17 @@
       color: #5b7cfa;
       background: transparent;
       text-align: center;
+    }
+    .main-footer a {
+      color: #5b7cfa;
+      margin: 0 0.3em;
+      text-decoration: none;
+      font-size: 1.1em;
+      vertical-align: middle;
+    }
+    .main-footer a:hover {
+      text-decoration: underline;
+      color: #232323;
     }
     /* Fondo animado */
     .animated-bg {
@@ -330,6 +349,11 @@
         padding-left: 2vw;
         padding-right: 2vw;
       }
+      .header-content {
+        flex-direction: column;
+        gap: 0.7em;
+        padding: 1.2rem 0.5rem;
+      }
     }
   </style>
 </head>
@@ -337,7 +361,10 @@
   <div class="animated-bg"></div>
   <header class="main-header">
     <div class="header-content">
-      <span class="logo">Swtptakes</span>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="WhatsApp Image 2025-06-02 at 8.48.49 PM.jpeg" alt="Logo Swtptakes" style="height:38px;width:auto;vertical-align:middle;">
+        <span class="logo">Swtptakes</span>
+      </div>
       <nav class="redes">
         <a href="https://instagram.com/swtptakes" target="_blank" aria-label="Instagram">
           <i class="fab fa-instagram"></i>
@@ -345,37 +372,52 @@
         <a href="https://facebook.com/swtptakes" target="_blank" aria-label="Facebook">
           <i class="fab fa-facebook"></i>
         </a>
+        <a href="https://www.tiktok.com/@swtptakes" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
       </nav>
     </div>
   </header>
   <div class="productos productos-columna">
-    <!-- Tarjeta Google Play primero -->
     <div class="producto">
-      <h2>Participa por una Tarjeta Google Play <span class="gratis">GRATIS</span></h2>
+      <h2 style="margin-bottom:0.5em;">
+        <i class="fas fa-ticket-alt" style="color:#5b7cfa;margin-right:8px;"></i>
+        Participa por una Tarjeta Google Play <span class="gratis">GRATIS</span>
+      </h2>
       <img src="tarjeta.jpeg" alt="Tarjeta Google Play" />
-      <p><strong>Sorteo el 8 de junio de 2025</strong></p>
-      <div class="ticket-info">
-        <p><strong>El ganador será anunciado en nuestro perfil de instagram</strong></p>
+      <p style="font-size:1.15em;margin-bottom:0.2em;"><strong>Sorteo el 8 de junio de 2025</strong></p>
+      <div class="ticket-info" style="color:#5b7cfa;font-size:1em;">
+        El ganador será anunciado en nuestro perfil de Instagram.
       </div>
-      <footer>
-        instagram: <a href="https://instagram.com/swtptakes" target="_blank">swtptakes</a>
-      </footer>
-      <strong>Síguenos para mantenerte al tanto</strong>
-      <div class="ticket-box">
-        <p>Escribe tu nombre de usuario de instagram para generar tu ticket único para la Tarjeta Google Play:</p>
-        <input type="text" id="nombre-tarjeta" placeholder="Tu nombre de usuario..." />
-        <br/>
-        <button id="btn-tarjeta" onclick="generarTicketTarjeta()">Generar Ticket Tarjeta</button>
+      <div class="ticket-box" style="margin-top:2em;">
+        <label for="nombre-tarjeta" style="display:block;font-weight:600;color:#232323;margin-bottom:0.5em;">Usuario de Instagram</label>
+        <input type="text" id="nombre-tarjeta" placeholder="Tu nombre de usuario..." aria-label="Usuario de Instagram" />
+        <div style="font-size:0.97em;color:#888;margin:0.5em 0 1em 0;">Tus datos solo se usan para el sorteo.</div>
+        <button id="btn-tarjeta" onclick="generarTicketTarjeta()" aria-label="Generar Ticket Tarjeta">
+          <i class="fas fa-ticket-alt"></i> Generar Ticket Tarjeta
+          <span id="loader" style="display:none;margin-left:10px;"><i class="fas fa-spinner fa-spin"></i></span>
+        </button>
       </div>
       <div class="resultado" id="resultado-tarjeta"></div>
-      <strong>El ticket se descarga en PDF automático</strong>
+      <div style="margin-top:1.2em;font-size:0.98em;color:#5b7cfa;">
+        
+      </div>
     </div>
   </div>
-  <button class="regresar-btn" onclick="window.location.href='index.html'">Regresar</button>
+  <button class="regresar-btn" onclick="window.location.href='index.html'" aria-label="Regresar">
+    <i class="fas fa-arrow-left"></i> Regresar
+  </button>
   <footer class="main-footer">
-    Organizado por <strong>swtptakes</strong> | Contacto: <a href="https://instagram.com/swtptakes" target="_blank">@swtptakes</a>
+    Organizado por <strong>swtptakes</strong> | 
+    <a href="https://instagram.com/swtptakes" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/swtptakes" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.tiktok.com/@swtptakes" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <span style="margin-left:1em;">
+      <a href="mailto:contacto@swtptakes.com" style="color:#5b7cfa;text-decoration:none;">Contacto</a>
+      |
+      <a href="terminos.html" style="color:#5b7cfa;text-decoration:none;">Términos y condiciones</a>
+    </span>
   </footer>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>
     const usados = new Set();
@@ -405,15 +447,19 @@
     // Solo para la Tarjeta Google Play
     async function generarTicketTarjeta() {
       const boton = document.getElementById("btn-tarjeta");
+      const loader = document.getElementById("loader");
       boton.disabled = true;
-      boton.textContent = "Generando...";
+      loader.style.display = "inline-block";
+      boton.querySelector("span").style.display = "inline-block";
+      boton.childNodes[1].textContent = " Generando...";
 
       const { jsPDF } = window.jspdf;
       const nombre = document.getElementById("nombre-tarjeta").value.trim();
       if (!nombre) {
         alert("Por favor, escribe tu nombre.");
         boton.disabled = false;
-        boton.textContent = "Generar Ticket Tarjeta";
+        loader.style.display = "none";
+        boton.childNodes[1].textContent = " Generar Ticket Tarjeta";
         return;
       }
 
@@ -434,7 +480,8 @@
 
       setTimeout(() => {
         boton.disabled = false;
-        boton.textContent = "Generar Ticket Tarjeta";
+        loader.style.display = "none";
+        boton.childNodes[1].textContent = " Generar Ticket Tarjeta";
       }, 2000);
     }
 
@@ -448,7 +495,7 @@
     // Mostrar número animado y confeti
     function mostrarNumeroAnimado(idContenedor, numero) {
       const contenedor = document.getElementById(idContenedor);
-      contenedor.innerHTML = "";
+      contenedor.innerHTML = "<div style='color:#43ea5a;font-weight:600;margin-bottom:0.5em;'>¡Ticket generado con éxito!</div>";
       const numDiv = document.createElement("div");
       numDiv.className = "resultado-animado";
       numDiv.textContent = numero;

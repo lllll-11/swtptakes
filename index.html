@@ -11,7 +11,7 @@
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f6f7fb;
-      color: #232323;
+      color: #181818; /* más oscuro */
     }
     .productos {
       display: flex;
@@ -48,7 +48,7 @@
     .producto p {
       margin: 0.5rem 0 0 0;
       font-weight: 600;
-      color: #232323;
+      color: #181818; /* más oscuro */
       font-size: 1.1rem;
     }
     .producto .gratis {
@@ -113,13 +113,13 @@
     .logo {
       font-size: 2rem;
       font-weight: 700;
-      color: #232323;
+      color: #181818; /* más oscuro */
       letter-spacing: 2px;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-shadow: 0 2px 8px rgba(91,124,250,0.06);
     }
     .redes a {
-      color: #232323;
+      color: #181818; /* más oscuro */
       font-size: 1.7rem;
       margin-left: 1.2rem;
       transition: color 0.2s;
@@ -141,8 +141,8 @@
       pointer-events: none;
       background: linear-gradient(
         120deg,
-        #e6e8f0 0%,
-        #f6f7fb 100%
+        #ffffff 0%,
+        #c7c7c7 100%
       );
       opacity: 0.7;
       background-size: 300% 300%;
@@ -163,7 +163,7 @@
     .contador-titulo {
       margin-top: 1rem;
       font-size: 1.05rem;
-      color: #232323;
+      color: #181818; /* más oscuro */
       font-weight: 600;
       letter-spacing: 1px;
     }
@@ -189,7 +189,7 @@
       min-width: 1.5em;
       text-align: center;
       background: #fff;
-      color: #232323;
+      color: #181818; /* más oscuro */
       border-radius: 0.3em;
       margin: 0 0.1em;
       font-weight: bold;
@@ -226,13 +226,25 @@
         padding-left: 2vw;
         padding-right: 2vw;
       }
+      .explicacion, .testimonios, .faq {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem !important;
+      }
+      .testimonios-lista {
+        flex-direction: column;
+        gap: 1em;
+      }
     }
   </style>
 </head>
 <body>
   <header class="main-header">
     <div class="header-content">
-      <span class="logo">Swtptakes</span>
+      <!-- Logo gráfico y nombre -->
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="WhatsApp Image 2025-06-02 at 8.48.49 PM.jpeg" alt="Logo Swtptakes" style="height:38px;width:auto;vertical-align:middle;">
+        <span class="logo">Swtptakes</span>
+      </div>
       <nav class="redes">
         <a href="https://instagram.com/swtptakes" target="_blank" aria-label="Instagram">
           <i class="fab fa-instagram"></i>
@@ -240,15 +252,25 @@
         <a href="https://facebook.com/swtptakes" target="_blank" aria-label="Facebook">
           <i class="fab fa-facebook"></i>
         </a>
+        <a href="https://www.tiktok.com/@swtptakes" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
       </nav>
     </div>
   </header>
 
-  <!-- Animación de fondo -->
   <div class="animated-bg"></div>
 
+  <!-- Bloque de explicación y reglas -->
+  <section class="explicacion">
+    <h1>Participa en el sorteo de una Tarjeta Google Play</h1>
+    <p>
+      ¡Consigue tu ticket gratis y participa en nuestro sorteo! El ganador será anunciado el <b>8 de junio de 2025</b> en nuestras redes sociales.<br>
+      <span class="mini-info">Solo necesitas tu usuario de Instagram para participar.</span>
+    </p>
+  </section>
+
   <div class="productos">
-    <!-- Solo la tarjeta Google Play -->
     <div class="producto">
       <img src="tarjeta.jpeg" alt="Tarjeta Google Play">
       <p>Tarjeta Google Play</p>
@@ -264,9 +286,158 @@
 
   <button class="boton-comprar" id="botonTrebol">
     <i class="fas fa-ticket-alt"></i>
-    <span>Comprar Boletos</span>
+    <span>Participa gratis</span>
   </button>
 
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿Cómo participo?</summary>
+      <p>Solo haz clic en "Participa gratis", ingresa tu usuario de Instagram y descarga tu ticket.</p>
+    </details>
+    <details>
+      <summary>¿Cuándo se anuncia el ganador?</summary>
+      <p>El 8 de junio de 2025 en nuestro Instagram <a href="https://instagram.com/swtptakes" target="_blank">@swtptakes</a>.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto cuesta participar?</summary>
+      <p>¡Nada! Es totalmente gratis.</p>
+    </details>
+  </section>
+
+  <footer class="main-footer">
+    <div>
+      <span>&copy; 2025 Swtptakes. Todos los derechos reservados.</span>
+      <span style="margin-left:1em;">
+        <a href="mailto:contacto@swtptakes.com" style="color:#5b7cfa;text-decoration:none;">Contacto</a>
+      </span>
+    </div>
+  </footer>
+
+  <style>
+    .explicacion {
+      max-width: 520px;
+      margin: 2.5rem auto 1.5rem auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgb(60, 72, 88);
+      padding: 2rem 2.2rem 1.2rem 2.2rem;
+      text-align: center;
+      border: 1.5px solid #e6e8f0;
+    }
+    .explicacion h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.6em;
+      color: #181818; /* más oscuro */
+    }
+    .explicacion .mini-info {
+      display: block;
+      margin-top: 0.7em;
+      color: #5b7cfa;
+      font-size: 1.08em;
+      font-weight: 500;
+    }
+    .testimonios {
+      max-width: 520px;
+      margin: 2.5rem auto 1.5rem auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.986);
+      padding: 1.5rem 2.2rem 1.2rem 2.2rem;
+      border: 1.5px solid #e6e8f0;
+    }
+    .testimonios h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1em;
+      color: #181818; /* más oscuro */
+      text-align: center;
+    }
+    .testimonios-lista {
+      display: flex;
+      gap: 1.5em;
+      justify-content: center;
+      align-items: center;
+    }
+    .testimonio {
+      display: flex;
+      align-items: center;
+      gap: 0.8em;
+      background: #f6f7fb;
+      border-radius: 12px;
+      padding: 0.7em 1.2em;
+      box-shadow: 0 2px 8px rgba(91,124,250,0.07);
+      border: 1px solid #e6e8f0;
+    }
+    .testimonio img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #5b7cfa33;
+    }
+    .testimonio b {
+      color: #181818; /* más oscuro */
+      font-size: 1.08em;
+    }
+    .testimonio span {
+      display: block;
+      color: #5b7cfa;
+      font-size: 0.98em;
+    }
+    .faq {
+      max-width: 520px;
+      margin: 2.5rem auto 2.5rem auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(60, 72, 88, 0.08);
+      padding: 1.5rem 2.2rem 1.2rem 2.2rem;
+      border: 1.5px solid #e6e8f0;
+    }
+    .faq h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1em;
+      color: #181818; /* más oscuro */
+      text-align: center;
+    }
+.faq details {
+  margin-bottom: 0.7em;
+  background: #e4e4e4;      /* Gris sólido, más oscuro */
+  border-radius: 8px;
+  padding: 0.7em 1em;
+  border: 1.5px solid #bfcfff;
+  font-size: 1.05em;
+  color: #181818;
+  cursor: pointer;
+  box-shadow: none;         /* Quita la sombra */
+}
+.faq details[open] {
+  background: #d1d1d1;      /* Un poco más oscuro al abrir */
+}
+    .main-footer {
+      text-align: center;
+      font-size: 1em;
+      color: #5b7cfa;
+      background: #fff;
+      border-top: 1.5px solid #e6e8f0;
+      padding: 1.5em 0 1.5em 0;
+      margin-top: 2.5em;
+    }
+    @media (max-width: 600px) {
+      .explicacion, .testimonios, .faq {
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem !important;
+      }
+      .testimonios-lista {
+        flex-direction: column;
+        gap: 1em;
+      }
+    }
+  </style>
+  <!-- ...tu script JS igual... -->
   <script>
     // Botón para ir a compra.html con animación
     document.getElementById('botonTrebol').addEventListener('click', function(e) {
