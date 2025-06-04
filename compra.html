@@ -11,8 +11,8 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #222;
-      background: #f7f7f7;
+      color: #232323;
+      background: #f6f7fb;
       min-height: 100vh;
       position: relative;
     }
@@ -21,9 +21,10 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 2px 16px rgba(106,130,251,0.07);
+      background: #fff;
+      box-shadow: 0 2px 16px rgba(60, 72, 88, 0.06);
+      border-bottom: 1.5px solid #e6e8f0;
+      backdrop-filter: none;
     }
     .header-content {
       max-width: 1100px;
@@ -36,13 +37,13 @@
     .logo {
       font-size: 2rem;
       font-weight: 700;
-      color: #000000;
+      color: #232323;
       letter-spacing: 2px;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-shadow: 0 2px 8px rgba(106,130,251,0.08);
+      text-shadow: 0 2px 8px rgba(91,124,250,0.06);
     }
     .redes a {
-      color: #000000;
+      color: #232323;
       font-size: 1.7rem;
       margin-left: 1.2rem;
       transition: color 0.2s;
@@ -50,7 +51,7 @@
       vertical-align: middle;
     }
     .redes a:hover {
-      color: #6a82fb;
+      color: #5b7cfa;
     }
     .productos {
       display: flex;
@@ -63,32 +64,37 @@
       flex-direction: column;
       align-items: center;
       gap: 2.5rem;
+      display: flex;
     }
-.producto {
-  background: #f3f4f8; /* gris claro */
-  border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-  padding: 2.5rem 2rem 2rem 2rem; /* ligeramente más padding */
-  width: 475px; /* 25% más grande que 380px */
-  transition: transform 0.18s;
-  position: relative;
-}
+    .producto {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(60, 72, 88, 0.10);
+      padding: 2.5rem 2rem 2rem 2rem;
+      width: 420px;
+      transition: transform 0.18s, box-shadow 0.18s;
+      position: relative;
+      border: 1.5px solid #e6e8f0;
+      text-align: center;
+    }
     .producto:hover {
-      transform: translateY(-8px) scale(1.04);
-      box-shadow: 0 8px 32px rgba(106,130,251,0.13);
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(60, 72, 88, 0.13);
+      border-color: #bfcfff;
     }
-   .producto img {
-  width: 150px;   /* 25% más grande que 120px */
-  height: 150px;
-  border-radius: 16px;
-  object-fit: contain;
-  box-shadow: 0 0 12px rgba(106,130,251,0.10);
-  margin-bottom: 1rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  background: #fff;
-}
+    .producto img {
+      width: 130px;
+      height: 130px;
+      border-radius: 14px;
+      object-fit: contain;
+      box-shadow: 0 0 12px rgba(106,130,251,0.10);
+      margin-bottom: 1rem;
+      background: #f3f4f8;
+      border: 1.5px solid #e6e8f0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .producto h2,
     .producto p,
     .producto strong,
@@ -96,40 +102,41 @@
     .producto .ticket-box,
     .producto .resultado,
     .producto footer {
-      color: #111 !important;
-      text-align: left;
+      color: #232323 !important;
+      text-align: center;
     }
     .producto p, .producto strong {
       margin: 0.5rem 0 0 0;
       font-weight: bold;
-      color: #222;
+      color: #232323;
       font-size: 1.1rem;
     }
     .producto .gratis {
-      color: #fc5c7d;
+      color: #5b7cfa;
       font-weight: bold;
       font-size: 1rem;
       margin-top: 0.2rem;
+      letter-spacing: 1px;
     }
     .producto .ticket-box {
       margin-top: 18px;
       font-size: 1rem;
-      color: #222;
+      color: #232323;
     }
     .producto input[type="text"] {
       padding: 10px;
       width: 80%;
       margin: 10px 0;
       border-radius: 8px;
-      border: 1px solid #6a82fb;
+      border: 1.5px solid #b5b5b5;
       font-size: 16px;
-      background: #f7f7f7;
-      color: #222;
+      background: #f7f7fb;
+      color: #232323;
       outline: none;
       transition: border 0.2s;
     }
     .producto input[type="text"]:focus {
-      border: 1.5px solid #fc5c7d;
+      border: 1.5px solid #5b7cfa;
     }
     .producto input::placeholder {
       color: #b5b5b5;
@@ -137,9 +144,9 @@
     }
     .producto button,
     .producto a > button {
-      background: #fff;
-      color: #222;
-      border: 1.5px solid #b5b5b5;
+      background: linear-gradient(90deg, #5b7cfa 0%, #fc5c7d 100%);
+      color: #fff;
+      border: none;
       border-radius: 8px;
       font-weight: 600;
       padding: 12px 28px;
@@ -148,7 +155,7 @@
       letter-spacing: normal;
       margin: 10px 0;
       cursor: pointer;
-      box-shadow: none;
+      box-shadow: 0 4px 18px rgba(91,124,250,0.10);
       transition: 
         background 0.2s,
         color 0.2s,
@@ -161,17 +168,16 @@
     }
     .producto button:hover,
     .producto a > button:hover {
-      background: #f7f7f7;
-      color: #6a82fb;
-      border-color: #6a82fb;
-      box-shadow: 0 4px 18px rgba(106,130,251,0.10);
+      background: linear-gradient(90deg, #4a5fc1 0%, #e04c6a 100%);
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(91,124,250,0.13);
       transform: translateY(-2px) scale(1.04);
     }
     .producto button:active,
     .producto a > button:active {
       background: #eaeaff;
-      color: #fc5c7d;
-      border-color: #fc5c7d;
+      color: #5b7cfa;
+      border-color: #5b7cfa;
       transform: scale(0.98);
     }
     .producto a {
@@ -180,27 +186,27 @@
     .producto footer {
       margin-top: 18px;
       font-size: 14px;
-      color: #6a82fb;
+      color: #5b7cfa;
       background: transparent;
     }
     .producto strong {
-      color: #fc5c7d;
+      color: #232323;
     }
     .producto .ticket-info {
-      color: #222;
+      color: #232323;
       font-size: 0.98rem;
       margin-bottom: 0.5rem;
     }
     .producto .resultado {
       margin-top: 12px;
-      color: #6a82fb;
+      color: #5b7cfa;
       font-weight: bold;
     }
     .regresar-btn {
       display: block;
       margin: 40px auto 0 auto;
       background: #fff;
-      color: #222;
+      color: #232323;
       border: 1.5px solid #b5b5b5;
       border-radius: 8px;
       font-weight: 600;
@@ -213,15 +219,15 @@
       transition: background 0.2s, color 0.2s, border 0.2s, transform 0.18s cubic-bezier(.68,-0.55,.27,1.55);
     }
     .regresar-btn:hover {
-      background: #f7f7f7;
-      color: #6a82fb;
-      border-color: #6a82fb;
+      background: #f7f7fb;
+      color: #5b7cfa;
+      border-color: #5b7cfa;
       transform: translateY(-2px) scale(1.04);
     }
     footer.main-footer {
       margin-top: 50px;
       font-size: 15px;
-      color: #6a82fb;
+      color: #5b7cfa;
       background: transparent;
       text-align: center;
     }
@@ -236,15 +242,12 @@
       pointer-events: none;
       background: linear-gradient(
         120deg,
-        #6e037c 0%,
-        #750230 30%,
-        #811102 60%,
-        #502802 80%,
-        #395502 100%
+        #e6e8f0 0%,
+        #f6f7fb 100%
       );
-      opacity: 0.13;
+      opacity: 0.7;
       background-size: 300% 300%;
-      animation: flujoFondo 8s linear infinite;
+      animation: flujoFondo 12s linear infinite;
     }
     @keyframes flujoFondo {
       0% { background-position: 0% 50%; }
@@ -256,78 +259,78 @@
       z-index: 1;
     }
     .resultado-animado {
-  display: inline-block;
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #fc5c7d;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(252,92,125,0.13);
-  padding: 0.5em 1.2em;
-  margin: 1em 0;
-  animation: emergeTicket 1s cubic-bezier(.68,-0.55,.27,1.55);
-  position: relative;
-  z-index: 2;
-}
-@keyframes emergeTicket {
-  0% {
-    opacity: 0;
-    transform: scale(0.3) translateY(80px);
-  }
-  70% {
-    opacity: 1;
-    transform: scale(1.15) translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-/* Confeti */
-.confeti {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-  z-index: 10;
-}
-.confeti-piece {
-  position: absolute;
-  width: 12px;
-  height: 18px;
-  border-radius: 3px;
-  opacity: 0.85;
-  animation: confeti-fall 1.2s linear forwards;
-}
-@keyframes confeti-fall {
-  0% { opacity: 1; transform: translateY(0) rotate(0deg);}
-  80% { opacity: 1;}
-  100% { opacity: 0; transform: translateY(120px) rotate(360deg);}
-}
-.regresar-btn.left-btn {
-  margin: 32px 0 0 40px;
-  float: left;
-  display: inline-block;
-}
-@media (max-width: 600px) {
-  .producto {
-    width: 95vw !important;
-    min-width: unset !important;
-    max-width: 99vw !important;
-    padding: 1.2rem 0.7rem 1.2rem 0.7rem !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    box-sizing: border-box !important;
-  }
-  .productos {
-    gap: 1.2rem !important;
-    margin: 2rem 0 !important;
-    padding-left: 2vw;
-    padding-right: 2vw;
-  }
-}
+      display: inline-block;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #5b7cfa;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(91,124,250,0.13);
+      padding: 0.5em 1.2em;
+      margin: 1em 0;
+      animation: emergeTicket 1s cubic-bezier(.68,-0.55,.27,1.55);
+      position: relative;
+      z-index: 2;
+    }
+    @keyframes emergeTicket {
+      0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(80px);
+      }
+      70% {
+        opacity: 1;
+        transform: scale(1.15) translateY(-10px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+    /* Confeti */
+    .confeti {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .confeti-piece {
+      position: absolute;
+      width: 12px;
+      height: 18px;
+      border-radius: 3px;
+      opacity: 0.85;
+      animation: confeti-fall 1.2s linear forwards;
+    }
+    @keyframes confeti-fall {
+      0% { opacity: 1; transform: translateY(0) rotate(0deg);}
+      80% { opacity: 1;}
+      100% { opacity: 0; transform: translateY(120px) rotate(360deg);}
+    }
+    .regresar-btn.left-btn {
+      margin: 32px 0 0 40px;
+      float: left;
+      display: inline-block;
+    }
+    @media (max-width: 600px) {
+      .producto {
+        width: 95vw !important;
+        min-width: unset !important;
+        max-width: 99vw !important;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+      }
+      .productos {
+        gap: 1.2rem !important;
+        margin: 2rem 0 !important;
+        padding-left: 2vw;
+        padding-right: 2vw;
+      }
+    }
   </style>
 </head>
 <body>
@@ -386,98 +389,20 @@
       return num;
     }
 
-    async function guardarEnGoogleSheets(nombre, numero, hoja) {
-      let scriptURL;
-      if (hoja === "Hoja 2") {
-        scriptURL = 'https://script.google.com/macros/s/AKfycbzysT7lD8qpeD7kCRCtV5ffggl5H45g0hdTS6i-jfRLBq5gnz7PiAgUPBB9cLiWQ2gRng/exec';
-      } else if (hoja === "tarjeta") {
-        scriptURL = 'https://script.google.com/macros/s/AKfycbyrZsIt80TdSBf1AvrcGOgnbQgdg1uADJu11MyTd9vhXktWI56Rlm6s_Yl6UmXszUsg/exec';
-      } else {
-        scriptURL = 'https://script.google.com/macros/s/AKfycbznTAd02Pxqrxc21hZ3WLNhpGd8wjuikVoMmzchTkftED3SonBHuxZMubp9M6fpy0EW/exec';
-      }
+    async function guardarEnGoogleSheets(nombre, numero) {
+      // Solo hoja "tarjeta"
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyrZsIt80TdSBf1AvrcGOgnbQgdg1uADJu11MyTd9vhXktWI56Rlm6s_Yl6UmXszUsg/exec';
       try {
         await fetch(scriptURL, {
           method: 'POST',
-          body: new URLSearchParams({ nombre, numero, hoja })
+          body: new URLSearchParams({ nombre, numero, hoja: "tarjeta" })
         });
       } catch (error) {
         console.warn("Error al guardar en Google Sheets:", error);
       }
     }
 
-    // Para el iPhone (hoja "prueba")
-    async function generarTicket() {
-      const boton = document.querySelector('.producto input#nombre').parentElement.querySelector('button');
-      boton.disabled = true;
-      boton.textContent = "Generando...";
-
-      const { jsPDF } = window.jspdf;
-      const nombre = document.getElementById("nombre").value.trim();
-      if (!nombre) {
-        alert("Por favor, escribe tu nombre.");
-        boton.disabled = false;
-        boton.textContent = "Generar Ticket";
-        return;
-      }
-
-      const numero = generarNumero();
-      await guardarEnGoogleSheets(nombre, numero, "prueba");
-
-      const doc = new jsPDF();
-      doc.setFontSize(18);
-      doc.text("Ticket de Sorteo - swtptakes", 20, 30);
-      doc.setFontSize(14);
-      doc.text(`Nombre: ${nombre}`, 20, 50);
-      doc.text(`Número asignado: ${numero}`, 20, 65);
-      doc.text("Sorteo finaliza: 30 de junio de 2025", 20, 80);
-      doc.text("Gracias por participar. ¡Buena suerte!", 20, 100);
-      doc.save(`ticket_${numero}.pdf`);
-
-      mostrarNumeroAnimado("resultado", numero);
-
-      setTimeout(() => {
-        boton.disabled = false;
-        boton.textContent = "Generar Ticket";
-      }, 2000);
-    }
-
-    // Para los AirPods (hoja "Hoja 2")
-    async function generarTicketAirpods() {
-      const boton = document.getElementById("btn-airpods");
-      boton.disabled = true;
-      boton.textContent = "Generando...";
-
-      const { jsPDF } = window.jspdf;
-      const nombre = document.getElementById("nombre-airpods").value.trim();
-      if (!nombre) {
-        alert("Por favor, escribe tu nombre.");
-        boton.disabled = false;
-        boton.textContent = "Generar Ticket AirPods";
-        return;
-      }
-
-      const numero = generarNumero();
-      await guardarEnGoogleSheets(nombre, numero, "Hoja 2");
-
-      const doc = new jsPDF();
-      doc.setFontSize(18);
-      doc.text("Ticket de Sorteo - AirPods 3ra Gen - swtptakes", 20, 30);
-      doc.setFontSize(14);
-      doc.text(`Nombre: ${nombre}`, 20, 50);
-      doc.text(`Número asignado: ${numero}`, 20, 65);
-      doc.text("Sorteo finaliza: 30 de junio de 2025", 20, 80);
-      doc.text("Gracias por participar. ¡Buena suerte!", 20, 100);
-      doc.save(`ticket_airpods_${numero}.pdf`);
-
-      mostrarNumeroAnimado("resultado-airpods", numero);
-
-      setTimeout(() => {
-        boton.disabled = false;
-        boton.textContent = "Generar Ticket AirPods";
-      }, 2000);
-    }
-
-    // Para la Tarjeta Google Play (hoja "tarjeta")
+    // Solo para la Tarjeta Google Play
     async function generarTicketTarjeta() {
       const boton = document.getElementById("btn-tarjeta");
       boton.disabled = true;
@@ -493,7 +418,7 @@
       }
 
       const numero = generarNumero();
-      await guardarEnGoogleSheets(nombre, numero, "tarjeta");
+      await guardarEnGoogleSheets(nombre, numero);
 
       const doc = new jsPDF();
       doc.setFontSize(18);
@@ -513,68 +438,43 @@
       }, 2000);
     }
 
-    // Animación de clic en botones
-    document.querySelectorAll('.producto button').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        if (this.disabled) return;
-        this.classList.add('animar-clic');
-        setTimeout(() => this.classList.remove('animar-clic'), 400);
-      });
+    // Animación de clic en el botón
+    document.getElementById('btn-tarjeta').addEventListener('click', function(e) {
+      if (this.disabled) return;
+      this.classList.add('animar-clic');
+      setTimeout(() => this.classList.remove('animar-clic'), 400);
     });
 
-document.querySelectorAll('.producto a > button, .producto a button').forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    e.preventDefault();
-    const enlace = this.closest('a');
-    if (enlace && enlace.href) {
-      this.disabled = true;
-      this.textContent = "Redirigiendo...";
-      setTimeout(() => {
-        window.open(enlace.href, enlace.target || "_self");
-        this.disabled = false;
-        this.textContent = this.getAttribute('data-original-text') || "Comprar";
-      }, 1000);
+    // Mostrar número animado y confeti
+    function mostrarNumeroAnimado(idContenedor, numero) {
+      const contenedor = document.getElementById(idContenedor);
+      contenedor.innerHTML = "";
+      const numDiv = document.createElement("div");
+      numDiv.className = "resultado-animado";
+      numDiv.textContent = numero;
+      contenedor.appendChild(numDiv);
+
+      // Confeti
+      const confeti = document.createElement("div");
+      confeti.className = "confeti";
+      contenedor.appendChild(confeti);
+      lanzarConfeti(confeti);
+      setTimeout(() => confeti.remove(), 1400);
     }
-  });
-});
 
-// Guarda el texto original de los botones para restaurarlo después
-document.querySelectorAll('.producto a > button, .producto a button').forEach(btn => {
-  btn.setAttribute('data-original-text', btn.textContent);
-});
-
-// Reemplaza la línea donde se muestra el número en cada función generarTicket*
-function mostrarNumeroAnimado(idContenedor, numero) {
-  const contenedor = document.getElementById(idContenedor);
-  // Limpia antes de mostrar
-  contenedor.innerHTML = "";
-  // Crea el número animado
-  const numDiv = document.createElement("div");
-  numDiv.className = "resultado-animado";
-  numDiv.textContent = numero;
-  contenedor.appendChild(numDiv);
-
-  // Confeti
-  const confeti = document.createElement("div");
-  confeti.className = "confeti";
-  contenedor.appendChild(confeti);
-  lanzarConfeti(confeti);
-  setTimeout(() => confeti.remove(), 1400);
-}
-
-// Confeti simple
-function lanzarConfeti(contenedor) {
-  const colores = ["#fc5c7d", "#6a82fb", "#ffd700", "#43ea5a", "#ffb347"];
-  for (let i = 0; i < 24; i++) {
-    const piece = document.createElement("div");
-    piece.className = "confeti-piece";
-    piece.style.background = colores[Math.floor(Math.random() * colores.length)];
-    piece.style.left = (Math.random() * 120 - 60) + "px";
-    piece.style.animationDelay = (Math.random() * 0.3) + "s";
-    piece.style.transform = `rotate(${Math.random()*360}deg)`;
-    contenedor.appendChild(piece);
-  }
-}
+    // Confeti simple
+    function lanzarConfeti(contenedor) {
+      const colores = ["#fc5c7d", "#6a82fb", "#ffd700", "#43ea5a", "#ffb347"];
+      for (let i = 0; i < 24; i++) {
+        const piece = document.createElement("div");
+        piece.className = "confeti-piece";
+        piece.style.background = colores[Math.floor(Math.random() * colores.length)];
+        piece.style.left = (Math.random() * 120 - 60) + "px";
+        piece.style.animationDelay = (Math.random() * 0.3) + "s";
+        piece.style.transform = `rotate(${Math.random()*360}deg)`;
+        contenedor.appendChild(piece);
+      }
+    }
   </script>
 </body>
 </html>
