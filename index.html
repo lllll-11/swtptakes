@@ -244,26 +244,7 @@
   <div class="animated-bg"></div>
 
   <div class="productos">
-    <div class="producto">
-      <img src="iphone.jpeg" alt="Producto 1">
-      <p>iPhone 13 Mini</p>
-      <div class="contador-titulo">Termina en:</div>
-      <div id="contador-iphone" class="contador-reloj">
-        <span class="digito" id="horas-iphone">00</span><span class="sep">:</span>
-        <span class="digito" id="minutos-iphone">00</span><span class="sep">:</span>
-        <span class="digito" id="segundos-iphone">00</span>
-      </div>
-    </div>
-    <div class="producto">
-      <img src="airpods3ragen.jpeg" alt="Producto 2">
-      <p>AirPods 3ra gen</p>
-      <div class="contador-titulo">Termina en:</div>
-      <div id="contador-airpods" class="contador-reloj">
-        <span class="digito" id="horas-airpods">00</span><span class="sep">:</span>
-        <span class="digito" id="minutos-airpods">00</span><span class="sep">:</span>
-        <span class="digito" id="segundos-airpods">00</span>
-      </div>
-    </div>
+    <!-- Solo la tarjeta Google Play -->
     <div class="producto">
       <img src="tarjeta.jpeg" alt="Tarjeta Google Play">
       <p>Tarjeta Google Play</p>
@@ -289,23 +270,19 @@ document.getElementById('botonTrebol').addEventListener('click', function(e) {
   setTimeout(() => {
     this.classList.remove('animar-trebol');
     window.location.href = 'compra.html';
-  }, 1000); // Cambiado de 5000 a 2000 (2 segundos)
+  }, 1000);
 });
 
-    // Fechas de fin para cada sorteo
-    const fechasFin = {
-      iphone: new Date(new Date().getFullYear(), 5, 30, 23, 59, 59),   // 30 de junio
-      airpods: new Date(new Date().getFullYear(), 5, 30, 23, 59, 59),  // 30 de junio
-      tarjeta: new Date(new Date().getFullYear(), 5, 8, 23, 59, 59)    // 8 de junio
-    };
+    // Fecha de fin solo para la tarjeta
+    const fechaFinTarjeta = new Date(new Date().getFullYear(), 5, 8, 23, 59, 59); // 8 de junio
 
     function pad(n) {
       return n < 10 ? '0' + n : n;
     }
 
-    function actualizaContadorProducto(producto, fechaFin) {
+    function actualizaContadorTarjeta() {
       const ahora = new Date();
-      let diff = fechaFin - ahora;
+      let diff = fechaFinTarjeta - ahora;
       if (diff < 0) diff = 0;
       const horas = Math.floor(diff / (1000 * 60 * 60));
       const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -321,9 +298,9 @@ document.getElementById('botonTrebol').addEventListener('click', function(e) {
         }
       }
 
-      actualizaDigito('horas-' + producto, horas);
-      actualizaDigito('minutos-' + producto, minutos);
-      actualizaDigito('segundos-' + producto, segundos);
+      actualizaDigito('horas-tarjeta', horas);
+      actualizaDigito('minutos-tarjeta', minutos);
+      actualizaDigito('segundos-tarjeta', segundos);
     }
 
     // Animación flip para cada cambio
@@ -334,15 +311,11 @@ document.getElementById('botonTrebol').addEventListener('click', function(e) {
     });
 
     setInterval(() => {
-      actualizaContadorProducto('iphone', fechasFin.iphone);
-      actualizaContadorProducto('airpods', fechasFin.airpods);
-      actualizaContadorProducto('tarjeta', fechasFin.tarjeta);
+      actualizaContadorTarjeta();
     }, 1000);
 
     // Inicializa al cargar
-    actualizaContadorProducto('iphone', fechasFin.iphone);
-    actualizaContadorProducto('airpods', fechasFin.airpods);
-    actualizaContadorProducto('tarjeta', fechasFin.tarjeta);
+    actualizaContadorTarjeta();
   </script>
 </body>
 </html>
