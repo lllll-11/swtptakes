@@ -394,7 +394,8 @@
         <input type="text" id="nombre-tarjeta" placeholder="Tu nombre de usuario..." aria-label="Usuario de Instagram" />
         <div style="font-size:0.97em;color:#888;margin:0.5em 0 1em 0;">Tus datos solo se usan para el sorteo.</div>
         <button id="btn-tarjeta" onclick="generarTicketTarjeta()" aria-label="Generar Ticket Tarjeta">
-          <i class="fas fa-ticket-alt"></i> Generar Ticket Tarjeta
+          <i class="fas fa-ticket-alt"></i>
+          <span id="texto-boton-tarjeta" style="display:inline;">Generar Ticket Tarjeta</span>
           <span id="loader" style="display:none;margin-left:10px;"><i class="fas fa-spinner fa-spin"></i></span>
         </button>
       </div>
@@ -448,10 +449,10 @@
     async function generarTicketTarjeta() {
       const boton = document.getElementById("btn-tarjeta");
       const loader = document.getElementById("loader");
+      const textoBoton = document.getElementById("texto-boton-tarjeta");
       boton.disabled = true;
       loader.style.display = "inline-block";
-      boton.querySelector("span").style.display = "inline-block";
-      boton.childNodes[1].textContent = " Generando...";
+      textoBoton.textContent = "Generando...";
 
       const { jsPDF } = window.jspdf;
       const nombre = document.getElementById("nombre-tarjeta").value.trim();
@@ -459,7 +460,7 @@
         alert("Por favor, escribe tu nombre.");
         boton.disabled = false;
         loader.style.display = "none";
-        boton.childNodes[1].textContent = " Generar Ticket Tarjeta";
+        textoBoton.textContent = "Generar Ticket Tarjeta";
         return;
       }
 
@@ -481,7 +482,7 @@
       setTimeout(() => {
         boton.disabled = false;
         loader.style.display = "none";
-        boton.childNodes[1].textContent = " Generar Ticket Tarjeta";
+        textoBoton.textContent = "Generar Ticket Tarjeta";
       }, 2000);
     }
 
@@ -495,7 +496,7 @@
     // Mostrar número animado y confeti
     function mostrarNumeroAnimado(idContenedor, numero) {
       const contenedor = document.getElementById(idContenedor);
-      contenedor.innerHTML = "<div style='color:#43ea5a;font-weight:600;margin-bottom:0.5em;'>¡Ticket generado con éxito!</div>";
+      contenedor.innerHTML = "<div style='color:#4666e5;font-weight:600;margin-bottom:0.5em;'>¡Ticket generado con éxito!</div>";
       const numDiv = document.createElement("div");
       numDiv.className = "resultado-animado";
       numDiv.textContent = numero;
