@@ -7,257 +7,302 @@
   <link rel="icon" type="image/png" href="WhatsApp Image 2025-06-02 at 8.48.49 PM.jpeg" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f6f7fb;
-      color: #181818; /* más oscuro */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+    color: #181818;
+  }
+  .main-header {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: none;
+  }
+  .header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2rem;
+  }
+  .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #181818;
+    letter-spacing: 2px;
+    font-family: inherit;
+    text-shadow: none;
+  }
+  .redes a {
+    color: #181818;
+    font-size: 1.7rem;
+    margin-left: 1.2rem;
+    transition: color 0.2s;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+  .redes a:hover {
+    color: #888;
+  }
+  .explicacion, .testimonios, .faq, .ultimos-ganadores {
+    max-width: 520px;
+    margin: 2.5rem auto 1.5rem auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(60, 60, 60, 0.06);
+    padding: 1.5rem 2rem 1.2rem 2rem;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+  }
+  .explicacion h1,
+  .testimonios h2,
+  .faq h2,
+  .ultimos-ganadores h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1em;
+    color: #181818;
+    text-align: center;
+  }
+  .mini-info {
+    color: #888;
+    font-size: 1em;
+    font-weight: 500;
+  }
+  .productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 4rem 0;
+  }
+  .producto {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(60, 60, 60, 0.06);
+    text-align: center;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    width: 260px;
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.18s, border 0.18s;
+  }
+  .producto:hover {
+    box-shadow: 0 4px 16px rgba(60, 60, 60, 0.10);
+    border-color: #bdbdbd;
+  }
+  .producto img {
+    width: 110px;
+    height: 110px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: none;
+    margin-bottom: 1rem;
+    background: #f3f3f3;
+    border: 1px solid #e0e0e0;
+  }
+  .producto p {
+    margin: 0.5rem 0 0 0;
+    font-weight: 600;
+    color: #181818;
+    font-size: 1.1rem;
+  }
+  .producto .gratis {
+    color: #888;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    letter-spacing: 1px;
+  }
+  .boton-comprar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    margin: 2.5rem auto 1rem;
+    background: #181818;
+    color: #fff;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: none;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .boton-comprar:hover {
+    background: #444;
+    transform: translateY(-2px) scale(1.03);
+  }
+  .boton-comprar .fa-ticket-alt {
+    font-size: 1.4rem;
+    color: #fff;
+    filter: none;
+    transition: none;
+  }
+  .contador-titulo {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+    color: #181818;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .contador-reloj {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.4rem;
+    font-family: 'Segoe UI Mono', 'Consolas', monospace;
+    font-size: 1.4rem;
+    gap: 0.15em;
+    background: #f3f3f3;
+    border-radius: 0.7em;
+    padding: 0.3em 0.7em;
+    box-shadow: none;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #e0e0e0;
+  }
+  .contador-reloj .digito {
+    display: inline-block;
+    min-width: 1.5em;
+    text-align: center;
+    background: #fff;
+    color: #181818;
+    border-radius: 0.3em;
+    margin: 0 0.1em;
+    font-weight: bold;
+    box-shadow: none;
+    border: 1px solid #e0e0e0;
+    transition: none;
+    animation: none;
+  }
+  .contador-reloj .sep {
+    color: #888;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 0 0.1em;
+    opacity: 0.7;
+  }
+  .ultimos-ganadores {
+    box-shadow: 0 2px 8px rgba(60, 60, 60, 0.06);
+    border: 1px solid #e0e0e0;
+    background: #fff;
+  }
+  .ganadores-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2em;
+  }
+  .ganador {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 16px;
+    justify-content: center;
+  }
+  .ganador-foto {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #e0e0e0;
+    background: #f3f3f3;
+  }
+  .ganador-nombre {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #181818;
+  }
+  .btn-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #181818;
+    color: #fff !important;
+    padding: 0.55em 1.25em;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none !important;
+    cursor: pointer;
+  }
+  .btn-instagram:hover, .btn-instagram:focus {
+    background: #444;
+    color: #fff !important;
+    transform: translateY(-2px) scale(1.04);
+    text-decoration: none !important;
+  }
+  .btn-instagram i {
+    font-size: 1.2em;
+  }
+  .faq details {
+    margin-bottom: 0.7em;
+    background: #f3f3f3;
+    border-radius: 8px;
+    padding: 0.7em 1em;
+    border: 1px solid #e0e0e0;
+    font-size: 1.05em;
+    color: #181818;
+    cursor: pointer;
+    box-shadow: none;
+  }
+  .faq details[open] {
+    background: #e0e0e0;
+  }
+  .main-footer {
+    text-align: center;
+    font-size: 1em;
+    color: #888;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    padding: 1.5em 0 1.5em 0;
+    margin-top: 2.5em;
+  }
+  .main-footer a {
+    color: #181818;
+    text-decoration: underline dotted #888;
+    transition: color 0.2s;
+  }
+  .main-footer a:hover {
+    color: #444;
+  }
+  @media (max-width: 600px) {
+    .explicacion, .testimonios, .faq, .ultimos-ganadores {
+      max-width: 98vw;
+      padding: 1.2rem 0.7rem 1.2rem 0.7rem !important;
     }
-    .productos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin: 4rem 0;
+    .testimonios-lista {
+      flex-direction: column;
+      gap: 1em;
     }
     .producto {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 18px rgba(60, 72, 88, 0.10);
-      text-align: center;
-      padding: 2rem 1.5rem 1.5rem 1.5rem;
-      width: 260px;
-      transition: transform 0.18s, box-shadow 0.18s;
-      border: 1.5px solid #e6e8f0;
+      width: 95vw !important;
+      min-width: unset !important;
+      max-width: 99vw !important;
+      padding: 1.2rem 0.7rem 1.2rem 0.7rem !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      box-sizing: border-box !important;
     }
-    .producto:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(60, 72, 88, 0.13);
-      border-color: #bfcfff;
+    .productos {
+      gap: 1.2rem !important;
+      margin: 2rem 0 !important;
+      padding-left: 2vw;
+      padding-right: 2vw;
     }
-    .producto img {
-      width: 110px;
-      height: 110px;
-      border-radius: 14px;
-      object-fit: cover;
-      box-shadow: 0 0 10px rgba(106,130,251,0.09);
-      margin-bottom: 1rem;
-      background: #f3f4f8;
-      border: 1.5px solid #e6e8f0;
-    }
-    .producto p {
-      margin: 0.5rem 0 0 0;
-      font-weight: 600;
-      color: #181818; /* más oscuro */
-      font-size: 1.1rem;
-    }
-    .producto .gratis {
-      color: #5b7cfa;
-      font-weight: bold;
-      font-size: 1rem;
-      margin-top: 0.2rem;
-      letter-spacing: 1px;
-    }
-    .boton-comprar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.7rem;
-      margin: 2.5rem auto 1rem;
-      background: linear-gradient(90deg, #5b7cfa 0%, #fc5c7d 100%);
-      color: #fff;
-      padding: 1rem 2.5rem;
-      font-size: 1.2rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 4px 20px 0 rgba(106,130,251,0.10);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.4s;
-      position: relative;
-      overflow: hidden;
-    }
-    .boton-comprar::after {
-      content: "";
-      position: absolute;
-      left: -75%;
-      top: 0;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.01) 100%);
-      transform: skewX(-20deg);
-      transition: left 0.5s;
-      pointer-events: none;
-    }
-    .boton-comprar:hover {
-      background: linear-gradient(90deg, #4a5fc1 0%, #e04c6a 100%);
-      box-shadow: 0 8px 32px rgba(91,124,250,0.13);
-      transform: translateY(-2px) scale(1.03);
-    }
-    .boton-comprar:hover::after {
-      left: 120%;
-    }
-    .boton-comprar .fa-ticket-alt {
-      font-size: 1.4rem;
-      color: #fff;
-      filter: drop-shadow(0 0 6px #5b7cfa55);
-      transition: transform 0.3s;
-    }
-    .boton-comprar:active .fa-ticket-alt {
-      transform: scale(1.1) rotate(-8deg);
-    }
-    .main-header {
-      width: 100%;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: #fff;
-      box-shadow: 0 2px 16px rgba(60, 72, 88, 0.06);
-      border-bottom: 1.5px solid #e6e8f0;
-    }
-    .header-content {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem 2rem;
-    }
-    .logo {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #181818; /* más oscuro */
-      letter-spacing: 2px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-shadow: 0 2px 8px rgba(91,124,250,0.06);
-    }
-    .redes a {
-      color: #181818; /* más oscuro */
-      font-size: 1.7rem;
-      margin-left: 1.2rem;
-      transition: color 0.2s;
-      text-decoration: none;
-      vertical-align: middle;
-    }
-    .redes a:hover {
-      color: #5b7cfa;
-    }
-
-    /* Fondo animado sutil */
-    .animated-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      pointer-events: none;
-      background: linear-gradient(
-        120deg,
-        #ffffff 0%,
-        #c7c7c7 100%
-      );
-      opacity: 0.7;
-      background-size: 300% 300%;
-      animation: flujoFondo 12s linear infinite;
-    }
-
-    @keyframes flujoFondo {
-      0% { background-position: 0% 50%; }
-      70% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .productos, .main-header, .boton-comprar {
-      position: relative;
-      z-index: 1;
-    }
-
-    .contador-titulo {
-      margin-top: 1rem;
-      font-size: 1.05rem;
-      color: #181818; /* más oscuro */
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-    .contador-reloj {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 0.4rem;
-      font-family: 'Segoe UI Mono', 'Consolas', monospace;
-      font-size: 1.4rem;
-      gap: 0.15em;
-      background: #f3f4f8;
-      border-radius: 0.7em;
-      padding: 0.3em 0.7em;
-      box-shadow: 0 2px 8px rgba(91,124,250,0.07);
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-      border: 1px solid #e6e8f0;
-    }
-    .contador-reloj .digito {
-      display: inline-block;
-      min-width: 1.5em;
-      text-align: center;
-      background: #fff;
-      color: #181818; /* más oscuro */
-      border-radius: 0.3em;
-      margin: 0 0.1em;
-      font-weight: bold;
-      box-shadow: 0 1px 4px rgba(91,124,250,0.06);
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-      animation: flip 0.7s;
-      border: 1px solid #e6e8f0;
-    }
-    .contador-reloj .digito.animando {
-      animation: flip 0.7s, pop 0.3s;
-    }
-    @keyframes flip {
-      0% { transform: rotateX(90deg); background: #5b7cfa; color: #fff; }
-      60% { transform: rotateX(-20deg);}
-      100% { transform: rotateX(0deg);}
-    }
-    @keyframes pop {
-      0% { transform: scale(1); }
-      40% { transform: scale(1.18); }
-      100% { transform: scale(1); }
-    }
-    .contador-reloj .sep {
-      color: #5b7cfa;
-      font-weight: bold;
-      font-size: 1.1em;
-      margin: 0 0.1em;
-      opacity: 0.7;
-    }
-    @media (max-width: 600px) {
-      .producto {
-        width: 95vw !important;
-        min-width: unset !important;
-        max-width: 99vw !important;
-        padding: 1.2rem 0.7rem 1.2rem 0.7rem !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        box-sizing: border-box !important;
-      }
-      .productos {
-        gap: 1.2rem !important;
-        margin: 2rem 0 !important;
-        padding-left: 2vw;
-        padding-right: 2vw;
-      }
-      .explicacion, .testimonios, .faq {
-        max-width: 98vw;
-        padding: 1.2rem 0.7rem 1.2rem 0.7rem !important;
-      }
-      .testimonios-lista {
-        flex-direction: column;
-        gap: 1em;
-      }
-    }
+  }
   </style>
 </head>
 <body>
@@ -316,14 +361,15 @@
   <section class="ultimos-ganadores">
     <h2>Últimos ganadores</h2>
     <div class="ganadores-lista">
-      <div class="ganador-placeholder">
-        <i class="fas fa-trophy" style="font-size:2em;color:#ffd700;margin-bottom:0.3em;"></i>
-        <div class="ganador-info">
-          <strong>El próximo ganador será anunciado el 8 de junio de 2025</strong>
-          <div style="color:#5b7cfa;font-size:0.98em;margin-top:0.3em;">
-            Síguenos en <a href="https://instagram.com/swtptakes" target="_blank" style="color:#5b7cfa;text-decoration:underline;">@swtptakes</a> para enterarte.
-          </div>
+      <div class="ganador">
+        <img src="win.jpeg" alt="Devir Angeles Sebastian" class="ganador-foto">
+        <div>
+          <p class="ganador-nombre">Devir Angeles Sebastian</p>
+          <p class="ganador-premio" style="color:#888; font-size:1em; margin:0;">Ganador de la Tarjeta Google Play</p>
         </div>
+        <button class="btn-instagram" onclick="window.open('https://www.instagram.com/devirsang?igsh=MXMxc2pvZjRhbW45eA==', '_blank')" title="Ver perfil en Instagram">
+          <i class="fab fa-instagram"></i> Ver Instagram
+        </button>
       </div>
     </div>
   </section>
@@ -459,9 +505,9 @@
     .main-footer {
       text-align: center;
       font-size: 1em;
-      color: #5b7cfa;
+      color: #888;
       background: #fff;
-      border-top: 1.5px solid #e6e8f0;
+      border-top: 1px solid #e0e0e0;
       padding: 1.5em 0 1.5em 0;
       margin-top: 2.5em;
     }
@@ -519,81 +565,48 @@
 
   <!-- ...tu script JS igual... -->
   <script>
-    // Botón para ir a compra.html con animación
-    document.getElementById('botonTrebol').addEventListener('click', function(e) {
-      e.preventDefault();
-      lanzarConfeti();
+  // Botón para ir a compra.html con animación
+  document.getElementById('botonTrebol').addEventListener('click', function(e) {
+    e.preventDefault();
+    lanzarConfeti();
+    setTimeout(() => {
+      window.location.href = 'compra.html';
+    }, 1200);
+  });
+
+  function lanzarConfeti() {
+    const confetiContainer = document.getElementById('confeti-container');
+    confetiContainer.innerHTML = '';
+    const colores = ["#5b7cfa", "#fc5c7d", "#ffd700", "#43ea5a", "#ffb347"];
+    for (let i = 0; i < 40; i++) {
+      const div = document.createElement('div');
+      div.style.position = 'absolute';
+      div.style.width = '12px';
+      div.style.height = '18px';
+      div.style.borderRadius = '3px';
+      div.style.background = colores[Math.floor(Math.random() * colores.length)];
+      div.style.left = Math.random() * 100 + 'vw';
+      div.style.top = '-30px';
+      div.style.opacity = 0.85;
+      div.style.transform = `rotate(${Math.random()*360}deg)`;
+      div.style.transition = 'top 1.1s cubic-bezier(.68,-0.55,.27,1.55), opacity 1.1s';
+      confetiContainer.appendChild(div);
       setTimeout(() => {
-        window.location.href = 'compra.html';
-      }, 1200);
-    });
-
-    function lanzarConfeti() {
-      const confetiContainer = document.getElementById('confeti-container');
-      confetiContainer.innerHTML = '';
-      const colores = ["#5b7cfa", "#fc5c7d", "#ffd700", "#43ea5a", "#ffb347"];
-      for (let i = 0; i < 40; i++) {
-        const div = document.createElement('div');
-        div.style.position = 'absolute';
-        div.style.width = '12px';
-        div.style.height = '18px';
-        div.style.borderRadius = '3px';
-        div.style.background = colores[Math.floor(Math.random() * colores.length)];
-        div.style.left = Math.random() * 100 + 'vw';
-        div.style.top = '-30px';
-        div.style.opacity = 0.85;
-        div.style.transform = `rotate(${Math.random()*360}deg)`;
-        div.style.transition = 'top 1.1s cubic-bezier(.68,-0.55,.27,1.55), opacity 1.1s';
-        confetiContainer.appendChild(div);
-        setTimeout(() => {
-          div.style.top = (60 + Math.random()*30) + 'vh';
-          div.style.opacity = 0;
-        }, 10);
-      }
-      setTimeout(() => confetiContainer.innerHTML = '', 1300);
+        div.style.top = (60 + Math.random()*30) + 'vh';
+        div.style.opacity = 0;
+      }, 10);
     }
+    setTimeout(() => confetiContainer.innerHTML = '', 1300);
+  }
 
-    // Fecha de fin solo para la tarjeta Google Play
-    const fechaFinTarjeta = new Date(new Date().getFullYear(), 5, 8, 23, 59, 59); // 8 de junio
-
-    function pad(n) {
-      return n < 10 ? '0' + n : n;
-    }
-
-    function actualizaContadorTarjeta() {
-      const ahora = new Date();
-      let diff = fechaFinTarjeta - ahora;
-      if (diff < 0) diff = 0;
-      const horas = Math.floor(diff / (1000 * 60 * 60));
-      const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((diff % (1000 * 60)) / 1000);
-
-      function actualizaDigito(id, valor) {
-        const el = document.getElementById(id);
-        if (el && el.textContent !== pad(valor)) {
-          el.textContent = pad(valor);
-          el.classList.remove('animando');
-          void el.offsetWidth; // trigger reflow
-          el.classList.add('animando');
-        }
-      }
-
-      actualizaDigito('horas-tarjeta', horas);
-      actualizaDigito('minutos-tarjeta', minutos);
-      actualizaDigito('segundos-tarjeta', segundos);
-    }
-
-    // Animación flip para cada cambio de dígito
-    document.querySelectorAll('.contador-reloj .digito').forEach(el => {
-      el.addEventListener('animationend', () => {
-        el.classList.remove('animando');
-      });
-    });
-
-    setInterval(actualizaContadorTarjeta, 1000);
-
-    // Inicializa al cargar
-    actualizaContadorTarjeta();
-  </script>
+  // Elimina el contador automático, solo deja en 00:00:00:00:00
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('horas-tarjeta').textContent = '00';    document.getElementById('horas-tarjeta').textContent = '00';
+    document.getElementById('minutos-tarjeta').textContent = '00';ntById('minutos-tarjeta').textContent = '00';
+    document.getElementById('segundos-tarjeta').textContent = '00';dos-tarjeta').textContent = '00';
+  });
+  setInterval(actualizaContadorTarjeta, 1000);
+actualizaContadorTarjeta();
+  </script>  </script>
 </body>
 </html>
