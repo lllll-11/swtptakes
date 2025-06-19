@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - Swtptakes</title>
+    <link rel="icon" type="image/png" href="WhatsApp Image 2025-06-02 at 8.48.49 PM.jpeg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reutiliza los estilos base de tu CSS principal para consistencia */
+        :root {
+            --color-primary-dark: #1e293b;
+            --color-primary-light: #475569;
+            --color-accent: #3b82f6;
+            --color-accent-dark: #2563eb;
+            --color-background-light: #f8fafc; /* Fondo más claro para legibilidad */
+            --color-background-card: #ffffff;
+            --color-border: #e2e8f0;
+            --color-success: #22c55e;
+            --color-warning: #facc15;
+            --color-error: #ef4444;
+            --color-white: #ffffff;
+
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-button: 0 5px 15px rgba(59, 130, 246, 0.25);
+            --shadow-button-hover: 0 8px 25px rgba(59, 130, 246, 0.35);
+
+            --border-radius-sm: 0.375rem;
+            --border-radius-md: 0.5rem;
+            --border-radius-lg: 0.75rem;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--color-primary-dark);
+            background: var(--color-background-light); /* Fondo más claro */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--color-background-light) 0%, #eef2f6 100%);
+            background-size: 200% 200%;
+            animation: subtleFlow 15s ease infinite alternate;
+            opacity: 0.9;
+        }
+
+        @keyframes subtleFlow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .main-header {
+            width: 100%;
+            background-color: var(--color-background-card);
+            border-bottom: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            padding: 0.75rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.5rem;
+        }
+
+        .header-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .header-logo-container img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--color-border);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            letter-spacing: -0.025em;
+            white-space: nowrap;
+        }
+
+        .redes {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .redes a {
+            color: var(--color-primary-light);
+            font-size: 1.4rem;
+            transition: color 0.2s ease-in-out, transform 0.15s ease-in-out;
+            text-decoration: none;
+        }
+
+        .redes a:hover {
+            color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        main {
+            flex-grow: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+        }
+
+        .terms-container {
+            background: var(--color-background-card);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 3rem;
+            margin: 2rem auto;
+            max-width: 900px;
+            width: 100%;
+            border: 1px solid var(--color-border);
+            box-sizing: border-box;
+            line-height: 1.7; /* Mejorar legibilidad */
+        }
+
+        .terms-container h1 {
+            font-size: 2.2rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        .terms-container h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--color-accent);
+            border-radius: 2px;
+        }
+
+        .terms-container h2 {
+            font-size: 1.6rem;
+            color: var(--color-primary-dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .terms-container p {
+            font-size: 1.05rem;
+            color: var(--color-primary-light);
+            margin-bottom: 1rem;
+        }
+
+        .terms-container ul {
+            list-style-type: disc;
+            padding-left: 25px;
+            margin-bottom: 1rem;
+            color: var(--color-primary-light);
+        }
+
+        .terms-container ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .terms-container strong {
+            color: var(--color-primary-dark);
+        }
+
+        .regresar-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            margin: 2.5rem auto 0 auto;
+            background: var(--color-background-card);
+            color: var(--color-primary-light);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-md);
+            font-weight: 500;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+        }
+
+        .regresar-btn:hover {
+            background: var(--color-background-light);
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        footer.main-footer {
+            width: 100%;
+            margin-top: 4rem;
+            padding: 2rem 1.5rem;
+            font-size: 0.9rem;
+            color: var(--color-primary-light);
+            background: var(--color-background-card);
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .main-footer a {
+            color: var(--color-accent);
+            margin: 0 0.5em;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.2s ease, transform 0.15s ease, text-decoration 0.2s ease;
+        }
+
+        .main-footer a:hover {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+            transform: translateY(-2px);
+        }
+
+        .main-footer .footer-social-icons {
+            display: inline-block;
+            margin-left: 1.5em;
+        }
+
+        .main-footer .footer-social-icons a {
+            font-size: 1.1em;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .header-content { padding: 0 1rem; }
+            .logo { font-size: 1.4rem; }
+            .redes a { font-size: 1.2rem; }
+            .terms-container {
+                padding: 2rem;
+                margin: 1.5rem auto;
+            }
+            .terms-container h1 { font-size: 1.8rem; }
+            .terms-container h2 { font-size: 1.4rem; }
+            .terms-container p, .terms-container ul li { font-size: 0.95rem; }
+            .regresar-btn {
+                margin-top: 2rem;
+                padding: 8px 18px;
+                font-size: 0.95rem;
+            }
+            footer.main-footer {
+                padding: 1.5rem 1rem;
+                margin-top: 3rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content { padding: 0 0.75rem; }
+            .logo { font-size: 1.2rem; }
+            .redes a { font-size: 1.1rem; }
+            .terms-container { padding: 1.5rem; }
+            .terms-container h1 { font-size: 1.6rem; }
+            .terms-container h2 { font-size: 1.2rem; }
+            .terms-container p, .terms-container ul li { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-logo-container">
+                <img src="logo.png" alt="Logo Swtptakes" role="img">
+                <span class="logo">Swtptakes</span>
+            </div>
+            <nav class="redes" aria-label="Redes Sociales de Swtptakes">
+                <a href="https://instagram.com/swtptakes" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com/swtptakes" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.tiktok.com/@swtptakes" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="terms-container">
+            <h1>Términos y Condiciones de Uso de Swtptakes</h1>
+            <p><strong>Fecha de última actualización:</strong> 18 de junio de 2025</p>
+
+            <p>Bienvenido a Swtptakes. Al acceder y utilizar nuestro sitio web y los servicios de sorteos que ofrecemos, usted acepta cumplir con los siguientes términos y condiciones. Por favor, léalos detenidamente antes de participar en cualquier sorteo.</p>
+
+            <h2>1. Aceptación de los Términos</h2>
+            <p>Al participar en cualquiera de nuestros sorteos o utilizar cualquier parte de este sitio web, usted acepta estar legalmente vinculado por estos Términos y Condiciones, nuestra Política de Privacidad y cualquier regla específica de sorteo que se publique. Si no está de acuerdo con alguno de estos términos, no participe en nuestros sorteos ni utilice este sitio web.</p>
+
+            <h2>2. Elegibilidad para Participar</h2>
+            <ul>
+                <li>Los sorteos pueden tener restricciones geográficas o de otro tipo, las cuales serán especificadas en las reglas particulares de cada sorteo.</li>
+                <li>No podrán participar empleados, directores, agentes, ni familiares directos de Swtptakes.</li>
+            </ul>
+
+            <h2>3. Funcionamiento de los Sorteos</h2>
+            <ul>
+                <li>Swtptakes ofrece sorteos gratuitos de diversos premios (ej. tarjetas de regalo).</li>
+                <li>Para participar, los usuarios deberán proporcionar la información solicitada (ej. usuario de Instagram) a través del formulario en el sitio web.</li>
+                <li>Cada participante recibirá un número de boleto único (formato 5 dígitos + 3 letras, ej. `12345ABC`) que será guardado en nuestra base de datos.</li>
+                <li>La fecha y hora del sorteo, así como el método de selección del ganador, serán claramente anunciados en la página del sorteo y/o en nuestras redes sociales.</li>
+                <li>Los sorteos se realizarán de manera justa y transparente. La selección del ganador se realizará de forma aleatoria.</li>
+            </ul>
+
+            <h2>4. Premios</h2>
+            <ul>
+                <li>Los premios se describen en detalle en la página de cada sorteo.</li>
+                <li>Los premios no son transferibles ni canjeables por dinero en efectivo u otros productos, salvo que Swtptakes lo indique explícitamente.</li>
+                <li>El ganador es responsable de cualquier impuesto aplicable relacionado con la recepción del premio, de acuerdo con las leyes de su jurisdicción.</li>
+            </ul>
+
+            <h2>5. Notificación y Reclamo del Premio</h2>
+            <ul>
+                <li>El ganador será notificado a través de la red social especificada (ej. Instagram) en la fecha del sorteo.</li>
+                <li>El ganador tendrá un plazo específico (ej. 48 horas) para responder a la notificación y reclamar su premio, de lo contrario, se podrá seleccionar a un ganador alternativo.</li>
+                <li>Swtptakes podrá solicitar al ganador que proporcione información adicional (ej. dirección de correo electrónico, nombre completo) para verificar su identidad y facilitar la entrega del premio.</li>
+            </ul>
+
+            <h2>6. Privacidad de Datos</h2>
+            <p>La información personal recopilada (como su usuario de Instagram) se utilizará únicamente para fines de participación en el sorteo, notificación del ganador y gestión del premio. No se compartirá ni venderá a terceros para fines de marketing sin su consentimiento expreso. Para más detalles, consulte nuestra <a href="politica.html">Política de Privacidad</a> </p>
+
+            <h2>7. Uso de Datos del Ganador</h2>
+            <p>Al participar, el ganador acepta que Swtptakes pueda utilizar su nombre de usuario de Instagram, nombre (si se proporciona) y, en algunos casos, una fotografía (si el ganador lo autoriza explícitamente), con fines promocionales relacionados con el sorteo en nuestras redes sociales y sitio web.</p>
+
+            <h2>8. Conducta del Usuario</h2>
+            <ul>
+                <li>Los usuarios se comprometen a proporcionar información veraz y precisa.</li>
+                <li>Cualquier intento de fraude, manipulación o abuso del sistema de sorteos resultará en la descalificación inmediata del participante y la prohibición de futuras participaciones.</li>
+            </ul>
+
+            <h2>9. Modificaciones y Terminación</h2>
+            <p>Swtptakes se reserva el derecho de modificar, suspender o terminar cualquier sorteo, así como de cambiar estos Términos y Condiciones en cualquier momento y sin previo aviso, si lo considera necesario por razones técnicas, operativas, legales o de fuerza mayor. Cualquier cambio será efectivo inmediatamente después de su publicación en el sitio web.</p>
+
+            <h2>10. Limitación de Responsabilidad</h2>
+            <p>Swtptakes no será responsable por fallas técnicas, errores de software o hardware, virus informáticos, o cualquier otro problema que pueda afectar la participación o el desarrollo de un sorteo. La participación en los sorteos es bajo el propio riesgo del usuario.</p>
+
+            <h2>11. Ley Aplicable y Jurisdicción</h2>
+            <p>Estos Términos y Condiciones se rigen por las leyes de México. Cualquier disputa que surja en relación con estos términos o los sorteos de Swtptakes estará sujeta a la jurisdicción exclusiva de los tribunales de Salina Cruz, Oaxaca, México.</p>
+
+            <h2>12. Contacto</h2>
+            <p>Si tiene alguna pregunta sobre estos Términos y Condiciones o sobre nuestros sorteos, puede contactarnos a través de: <a href="mailto:swtptakes@gmail.com">contacto a swtptakes</a></p>
+
+            <p>Gracias por participar en Swtptakes. ¡Te deseamos mucha suerte!</p>
+        </section>
+
+        <button class="regresar-btn" onclick="window.location.href='index.html'" aria-label="Regresar a la página principal">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i> Regresar
+        </button>
+    </main>
+
+    <footer class="main-footer" role="contentinfo">
+        <span>Organizado por <strong>Swtptakes</strong></span>
+        <span class="footer-social-icons">
+        </span>
+        <br>
+        <span>
+            <a href="mailto:swtptakes@gmail.com" aria-label="Enviar correo a Swtptakes">Contacto</a>
+            |
+            <a href="tyc.html" aria-label="Ver términos y condiciones">Términos y condiciones</a>
+        </span>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Swtptakes</title>
+    <link rel="icon" type="image/png" href="WhatsApp Image 2025-06-02 at 8.48.49 PM.jpeg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reutiliza los estilos base de tu CSS principal para consistencia */
+        :root {
+            --color-primary-dark: #1e293b;
+            --color-primary-light: #475569;
+            --color-accent: #3b82f6;
+            --color-accent-dark: #2563eb;
+            --color-background-light: #f8fafc; /* Fondo más claro para legibilidad */
+            --color-background-card: #ffffff;
+            --color-border: #e2e8f0;
+            --color-success: #22c55e;
+            --color-warning: #facc15;
+            --color-error: #ef4444;
+            --color-white: #ffffff;
+
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-button: 0 5px 15px rgba(59, 130, 246, 0.25);
+            --shadow-button-hover: 0 8px 25px rgba(59, 130, 246, 0.35);
+
+            --border-radius-sm: 0.375rem;
+            --border-radius-md: 0.5rem;
+            --border-radius-lg: 0.75rem;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--color-primary-dark);
+            background: var(--color-background-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--color-background-light) 0%, #eef2f6 100%);
+            background-size: 200% 200%;
+            animation: subtleFlow 15s ease infinite alternate;
+            opacity: 0.9;
+        }
+
+        @keyframes subtleFlow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .main-header {
+            width: 100%;
+            background-color: var(--color-background-card);
+            border-bottom: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            padding: 0.75rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.5rem;
+        }
+
+        .header-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .header-logo-container img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--color-border);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            letter-spacing: -0.025em;
+            white-space: nowrap;
+        }
+
+        .redes {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .redes a {
+            color: var(--color-primary-light);
+            font-size: 1.4rem;
+            transition: color 0.2s ease-in-out, transform 0.15s ease-in-out;
+            text-decoration: none;
+        }
+
+        .redes a:hover {
+            color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        main {
+            flex-grow: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+        }
+
+        .privacy-container {
+            background: var(--color-background-card);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 3rem;
+            margin: 2rem auto;
+            max-width: 900px;
+            width: 100%;
+            border: 1px solid var(--color-border);
+            box-sizing: border-box;
+            line-height: 1.7; /* Mejorar legibilidad */
+        }
+
+        .privacy-container h1 {
+            font-size: 2.2rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        .privacy-container h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--color-accent);
+            border-radius: 2px;
+        }
+
+        .privacy-container h2 {
+            font-size: 1.6rem;
+            color: var(--color-primary-dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-container h3 {
+            font-size: 1.25rem;
+            color: var(--color-primary-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .privacy-container p {
+            font-size: 1.05rem;
+            color: var(--color-primary-light);
+            margin-bottom: 1rem;
+        }
+
+        .privacy-container ul {
+            list-style-type: disc;
+            padding-left: 25px;
+            margin-bottom: 1rem;
+            color: var(--color-primary-light);
+        }
+
+        .privacy-container ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .privacy-container strong {
+            color: var(--color-primary-dark);
+        }
+
+        .regresar-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            margin: 2.5rem auto 0 auto;
+            background: var(--color-background-card);
+            color: var(--color-primary-light);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-md);
+            font-weight: 500;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+        }
+
+        .regresar-btn:hover {
+            background: var(--color-background-light);
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        footer.main-footer {
+            width: 100%;
+            margin-top: 4rem;
+            padding: 2rem 1.5rem;
+            font-size: 0.9rem;
+            color: var(--color-primary-light);
+            background: var(--color-background-card);
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .main-footer a {
+            color: var(--color-accent);
+            margin: 0 0.5em;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.2s ease, transform 0.15s ease, text-decoration 0.2s ease;
+        }
+
+        .main-footer a:hover {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+            transform: translateY(-2px);
+        }
+
+        .main-footer .footer-social-icons {
+            display: inline-block;
+            margin-left: 1.5em;
+        }
+
+        .main-footer .footer-social-icons a {
+            font-size: 1.1em;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .header-content { padding: 0 1rem; }
+            .logo { font-size: 1.4rem; }
+            .redes a { font-size: 1.2rem; }
+            .privacy-container {
+                padding: 2rem;
+                margin: 1.5rem auto;
+            }
+            .privacy-container h1 { font-size: 1.8rem; }
+            .privacy-container h2 { font-size: 1.4rem; }
+            .privacy-container h3 { font-size: 1.1rem; }
+            .privacy-container p, .privacy-container ul li { font-size: 0.95rem; }
+            .regresar-btn {
+                margin-top: 2rem;
+                padding: 8px 18px;
+                font-size: 0.95rem;
+            }
+            footer.main-footer {
+                padding: 1.5rem 1rem;
+                margin-top: 3rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content { padding: 0 0.75rem; }
+            .logo { font-size: 1.2rem; }
+            .redes a { font-size: 1.1rem; }
+            .privacy-container { padding: 1.5rem; }
+            .privacy-container h1 { font-size: 1.6rem; }
+            .privacy-container h2 { font-size: 1.2rem; }
+            .privacy-container h3 { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-logo-container">
+                <img src="logo.png" alt="Logo Swtptakes" role="img">
+                <span class="logo">Swtptakes</span>
+            </div>
+            <nav class="redes" aria-label="Redes Sociales de Swtptakes">
+                <a href="https://instagram.com/swtptakes" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com/swtptakes" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.tiktok.com/@swtptakes" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="privacy-container">
+            <h1>Política de Privacidad de Swtptakes</h1>
+            <p><strong>Fecha de última actualización:</strong> 18 de junio de 2025</p>
+
+            <p>En Swtptakes, valoramos su privacidad y nos comprometemos a proteger sus datos personales. Esta Política de Privacidad describe cómo recopilamos, usamos, compartimos y protegemos la información que nos proporciona al participar en nuestros sorteos a través de nuestro sitio web y servicios.</p>
+
+            <p>Al utilizar Swtptakes, usted acepta las prácticas descritas en esta Política de Privacidad.</p>
+
+            <h2>1. Identidad del Responsable</h2>
+            <p>El responsable del tratamiento de sus datos personales es: <strong>Swtptakes</strong> (referido como "nosotros", "nuestro", o "la empresa").</p>
+            <p><strong>Correo electrónico de contacto:</strong> <a href="mailto:swtptakes@gmail.com">contacto a swtptakes</a></p>
+
+            <h2>2. Datos Personales Recopilados</h2>
+            <p>Para la participación en nuestros sorteos, recopilamos los siguientes datos personales:</p>
+            <ul>
+                <li><strong>Datos de Identificación y Contacto:</strong> Su nombre de usuario de Instagram. En caso de ser ganador, podríamos solicitar adicionalmente su nombre completo y correo electrónico para la entrega del premio.</li>
+                <li><strong>Datos Generados por la Participación:</strong> Un número de ticket único asignado a su participación.</li>
+            </ul>
+            <p><strong>No recopilamos datos sensibles.</strong></p>
+
+            <h2>3. Fines del Tratamiento de los Datos Personales</h2>
+            <p>Los datos personales que recopilamos son tratados para las siguientes finalidades:</p>
+            <h3>Finalidades Primarias (necesarias para el servicio):</h3>
+            <ul>
+                <li><strong>Gestionar su participación en nuestros sorteos:</strong> Registrar su usuario de Instagram y asignarle un número de ticket.</li>
+                <li><strong>Realizar los sorteos de forma justa y transparente:</strong> Utilizar el número de ticket para la selección aleatoria del ganador.</li>
+                <li><strong>Notificar a los ganadores:</strong> Contactarle a través de su usuario de Instagram si resulta ganador.</li>
+                <li><strong>Entregar los premios:</strong> En caso de ser necesario, solicitar información adicional para el envío o entrega del premio.</li>
+                <li><strong>Verificar la identidad del participante y/o ganador:</strong> Asegurar la validez de la participación y la entrega a la persona correcta.</li>
+            </ul>
+            <h3>Finalidades Secundarias (no esenciales para el servicio, pero que nos ayudan a mejorar o promocionar):</h3>
+            <ul>
+                <li><strong>Promoción de sorteos futuros y publicidad de ganadores:</strong> Con su consentimiento, podremos publicar su nombre de usuario de Instagram (y, si se nos autoriza expresamente, su nombre y/o fotografía) en nuestras redes sociales y sitio web para anunciar a los ganadores y promocionar futuros eventos.</li>
+                <li><strong>Análisis estadístico:</strong> Para comprender patrones de participación y mejorar nuestros servicios (estos datos son anonimizados).</li>
+            </ul>
+            <p>Usted puede oponerse a que sus datos personales sean tratados para las finalidades secundarias en cualquier momento, enviando un correo electrónico a <a href="mailto:swtptakes@gmail.com">contacto a swtptakes.com</a>. Su negativa no afectará la relación jurídica con Swtptakes.</p>
+
+            <h2>4. Medidas de Seguridad</h2>
+            <p>Hemos implementado medidas de seguridad administrativas, técnicas y físicas para proteger sus datos personales contra daño, pérdida, alteración, destrucción o el uso, acceso o tratamiento no autorizado. Esto incluye, pero no se limita a, el uso de hojas de cálculo protegidas con acceso restringido para almacenar los datos de los participantes.</p>
+
+            <h2>5. Transferencia de Datos Personales</h2>
+            <p>Swtptakes se compromete a no vender, ceder o transferir sus datos personales a terceros sin su consentimiento previo, salvo las excepciones previstas en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP). Las posibles transferencias podrían incluir:</p>
+            <ul>
+                <li>A proveedores de servicios que nos apoyan en la gestión de nuestra base de datos (como Google Sheets), siempre bajo estrictas obligaciones de confidencialidad y solo para los fines aquí descritos.</li>
+                <li>Cuando sea requerido por ley, orden judicial o para cumplir con obligaciones legales.</li>
+            </ul>
+            <p>En caso de realizar una transferencia que requiera su consentimiento, se lo haremos saber para obtenerlo previamente.</p>
+
+            <h2>6. Derechos ARCO (Acceso, Rectificación, Cancelación y Oposición)</h2>
+            <p>Usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las condiciones del uso que les damos (Acceso). Asimismo, es su derecho solicitar la corrección de su información personal en caso de que esté desactualizada, sea inexacta o incompleta (Rectificación); que la eliminemos de nuestros registros o bases de datos cuando considere que la misma no está siendo utilizada adecuadamente (Cancelación); así como oponerse al uso de sus datos personales para fines específicos (Oposición).</p>
+
+            <p>Para ejercer cualquiera de sus derechos ARCO, debe enviar una solicitud por escrito al correo electrónico <a href="mailto:swtptakes@gmail.com">contacto a swtptakes</a>. Su solicitud deberá contener y acompañar lo siguiente:</p>
+            <ul>
+                <li>Su nombre completo y domicilio u otro medio para comunicarle la respuesta a su solicitud.</li>
+                <li>Los documentos que acrediten su identidad o, en su caso, la representación legal del titular.</li>
+                <li>La descripción clara y precisa de los datos personales respecto de los que se busca ejercer alguno de los derechos ARCO.</li>
+                <li>Cualquier otro elemento o documento que facilite la localización de los datos personales.</li>
+            </ul>
+            <p>Responderemos a su solicitud en un plazo máximo de 20 días hábiles contados a partir de la fecha en que se recibió la solicitud. Si la solicitud es procedente, haremos efectiva la misma dentro de los 15 días hábiles siguientes a la fecha en que se comunique la respuesta.</p>
+
+            <h2>7. Uso de Tecnologías de Rastreo (Cookies y Web Beacons)</h2>
+            <p>Nuestro sitio web puede utilizar cookies, web beacons u otras tecnologías similares para monitorear su comportamiento como usuario de internet, brindarle un mejor servicio y experiencia de usuario al navegar en nuestra página, así como ofrecerle nuevos productos y servicios basados en sus preferencias.</p>
+            <p>Los datos personales que obtenemos de estas tecnologías de rastreo son: [EJ. idioma preferido, región desde la que se conecta, tipo de navegador, sistema operativo, hora y tiempo de permanencia en nuestro sitio web, secciones consultadas, páginas de internet accedidas antes y después de la nuestra, origen de su visita].</p>
+            <p>Estas tecnologías pueden deshabilitarse. Para conocer cómo hacerlo, consulte el menú de "Ayuda" de su navegador.</p>
+
+            <h2>8. Cambios a esta Política de Privacidad</h2>
+            <p>Swtptakes se reserva el derecho de efectuar en cualquier momento modificaciones o actualizaciones al presente aviso de privacidad, para la atención de novedades legislativas, políticas internas o nuevos requerimientos para la prestación u ofrecimiento de nuestros servicios. Estas modificaciones estarán disponibles al público a través de la publicación de la Política de Privacidad actualizada en nuestro sitio web.</p>
+
+            <h2>9. Aceptación de la Política de Privacidad</h2>
+            <p>Al participar en nuestros sorteos, usted reconoce que ha leído y entendido esta Política de Privacidad y acepta sus términos y condiciones.</p>
+
+            <h2>10. Jurisdicción</h2>
+            <p>Esta Política de Privacidad se rige por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y demás leyes aplicables de los Estados Unidos Mexicanos. Cualquier controversia que derive de la aplicación e interpretación de esta Política, será resuelta ante los tribunales competentes en Salina Cruz, Oaxaca, México.</p>
+        </section>
+
+        <button class="regresar-btn" onclick="window.location.href='index.html'" aria-label="Regresar a la página principal">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i> Regresar
+        </button>
+    </main>
+
+    <footer class="main-footer" role="contentinfo">
+        <span>Organizado por <strong>Swtptakes</strong></span>
+        <span class="footer-social-icons">
+        </span>
+        <br>
+        <span>
+            <a href="mailto:contacto@swtptakes.com" aria-label="Enviar correo a Swtptakes">Contacto</a>
+            |
+            <a href="terminos.html" aria-label="Ver términos y condiciones">Términos y condiciones</a>
+            |
+            <a href="politica-privacidad.html" aria-label="Ver política de privacidad">Política de privacidad</a>
+        </span>
+    </footer>
+</body>
+</html>
